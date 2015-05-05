@@ -32,10 +32,12 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Quicksand-Regular</string>
-		<string>Quicksand-Bold</string>
-		<string>Quicksand-Light</string>
+		<string>Quicksand-Regular.ttf</string>
+		<string>Quicksand-Bold.ttf</string>
+		<string>Quicksand-Light.ttf</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

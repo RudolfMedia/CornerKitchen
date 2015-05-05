@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="18" y="294"/>
         </scene>
-        <!--Truck EditVC-->
+        <!--Corner Kitchen-->
         <scene sceneID="SWz-jW-0P5">
             <objects>
                 <viewController id="1x3-C0-izt" customClass="RMTruckEditVC" sceneMemberID="viewController">
@@ -35,13 +35,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TJw-f3-g3v"/>
+                    <navigationItem key="navigationItem" title="Corner Kitchen" id="TJw-f3-g3v"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slX-eZ-mqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1567" y="596"/>
         </scene>
-        <!--Check InVC-->
+        <!--Corner Kitchen-->
         <scene sceneID="zLe-d9-z7U">
             <objects>
                 <viewController id="Cpr-bh-ICq" customClass="RMCheckInVC" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="O8Z-w4-urE"/>
+                    <navigationItem key="navigationItem" title="Corner Kitchen" id="O8Z-w4-urE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E20-Km-B8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

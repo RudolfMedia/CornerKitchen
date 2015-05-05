@@ -144,11 +144,11 @@
 			isa = PBXGroup;
 			children = (
 				26C7C3511AF95F4D00D99828 /* RMLoginVC.h */,
+				26C7C3521AF95F4D00D99828 /* RMLoginVC.m */,
 				26C7C3731AF9609F00D99828 /* RMTruckEditVC.h */,
 				26C7C3741AF9609F00D99828 /* RMTruckEditVC.m */,
 				26C7C3701AF9607F00D99828 /* RMCheckInVC.h */,
 				26C7C3711AF9607F00D99828 /* RMCheckInVC.m */,
-				26C7C3521AF95F4D00D99828 /* RMLoginVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -466,6 +466,7 @@
 				26C7C36C1AF95F4D00D99828 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26C7C36D1AF95F4D00D99828 /* Build configuration list for PBXNativeTarget "CornerKitchenTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +475,7 @@
 				26C7C36F1AF95F4D00D99828 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

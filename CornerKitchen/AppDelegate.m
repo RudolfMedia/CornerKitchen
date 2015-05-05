@@ -16,7 +16,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+       NSForegroundColorAttributeName : [UIColor whiteColor],
+       NSFontAttributeName : [UIFont fontWithName:@"Quicksand-Regular" size:22]
+
+       }];
+
+
     return YES;
 }
 
