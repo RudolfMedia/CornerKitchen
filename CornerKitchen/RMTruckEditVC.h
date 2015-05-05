@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RMTruckEditVC.h
 //  CornerKitchen
 //
 //  Created by Dan Rudolf on 5/5/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface RMTruckEditVC : UIViewController
 
 @end
-

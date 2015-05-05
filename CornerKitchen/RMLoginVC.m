@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 com.rudolfmedia. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RMLoginVC.h"
 
-@interface ViewController ()
+@interface RMLoginVC ()
 
 @end
 
-@implementation ViewController
+@implementation RMLoginVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

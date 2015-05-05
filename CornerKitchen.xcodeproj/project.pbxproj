@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		26C7C34D1AF95F4D00D99828 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C34C1AF95F4D00D99828 /* main.m */; };
 		26C7C3501AF95F4D00D99828 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C34F1AF95F4D00D99828 /* AppDelegate.m */; };
-		26C7C3531AF95F4D00D99828 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3521AF95F4D00D99828 /* ViewController.m */; };
+		26C7C3531AF95F4D00D99828 /* RMLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3521AF95F4D00D99828 /* RMLoginVC.m */; };
 		26C7C3561AF95F4D00D99828 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C3541AF95F4D00D99828 /* Main.storyboard */; };
 		26C7C3581AF95F4D00D99828 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C3571AF95F4D00D99828 /* Images.xcassets */; };
 		26C7C35B1AF95F4D00D99828 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C3591AF95F4D00D99828 /* LaunchScreen.xib */; };
 		26C7C3671AF95F4D00D99828 /* CornerKitchenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3661AF95F4D00D99828 /* CornerKitchenTests.m */; };
+		26C7C3721AF9607F00D99828 /* RMCheckInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3711AF9607F00D99828 /* RMCheckInVC.m */; };
+		26C7C3751AF9609F00D99828 /* RMTruckEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3741AF9609F00D99828 /* RMTruckEditVC.m */; };
+		26C7C37A1AF9611300D99828 /* RMDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3791AF9611300D99828 /* RMDataLoader.m */; };
+		26C7C37D1AF9612F00D99828 /* RMTruck.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C37C1AF9612F00D99828 /* RMTruck.m */; };
+		26C7C3811AF961DB00D99828 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C37E1AF961DB00D99828 /* Quicksand-Bold.ttf */; };
+		26C7C3821AF961DB00D99828 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C37F1AF961DB00D99828 /* Quicksand-Light.ttf */; };
+		26C7C3831AF961DB00D99828 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C3801AF961DB00D99828 /* Quicksand-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +39,25 @@
 		26C7C34C1AF95F4D00D99828 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		26C7C34E1AF95F4D00D99828 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26C7C34F1AF95F4D00D99828 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		26C7C3511AF95F4D00D99828 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		26C7C3521AF95F4D00D99828 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		26C7C3511AF95F4D00D99828 /* RMLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMLoginVC.h; sourceTree = "<group>"; };
+		26C7C3521AF95F4D00D99828 /* RMLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMLoginVC.m; sourceTree = "<group>"; };
 		26C7C3551AF95F4D00D99828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26C7C3571AF95F4D00D99828 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26C7C35A1AF95F4D00D99828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		26C7C3601AF95F4D00D99828 /* CornerKitchenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CornerKitchenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C7C3651AF95F4D00D99828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C7C3661AF95F4D00D99828 /* CornerKitchenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CornerKitchenTests.m; sourceTree = "<group>"; };
+		26C7C3701AF9607F00D99828 /* RMCheckInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMCheckInVC.h; sourceTree = "<group>"; };
+		26C7C3711AF9607F00D99828 /* RMCheckInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMCheckInVC.m; sourceTree = "<group>"; };
+		26C7C3731AF9609F00D99828 /* RMTruckEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTruckEditVC.h; sourceTree = "<group>"; };
+		26C7C3741AF9609F00D99828 /* RMTruckEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTruckEditVC.m; sourceTree = "<group>"; };
+		26C7C3781AF9611300D99828 /* RMDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDataLoader.h; sourceTree = "<group>"; };
+		26C7C3791AF9611300D99828 /* RMDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDataLoader.m; sourceTree = "<group>"; };
+		26C7C37B1AF9612F00D99828 /* RMTruck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTruck.h; sourceTree = "<group>"; };
+		26C7C37C1AF9612F00D99828 /* RMTruck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTruck.m; sourceTree = "<group>"; };
+		26C7C37E1AF961DB00D99828 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		26C7C37F1AF961DB00D99828 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		26C7C3801AF961DB00D99828 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +99,11 @@
 		26C7C3491AF95F4D00D99828 /* CornerKitchen */ = {
 			isa = PBXGroup;
 			children = (
+				26C7C3541AF95F4D00D99828 /* Main.storyboard */,
 				26C7C34E1AF95F4D00D99828 /* AppDelegate.h */,
 				26C7C34F1AF95F4D00D99828 /* AppDelegate.m */,
-				26C7C3511AF95F4D00D99828 /* ViewController.h */,
-				26C7C3521AF95F4D00D99828 /* ViewController.m */,
-				26C7C3541AF95F4D00D99828 /* Main.storyboard */,
+				26C7C3761AF960B400D99828 /* ViewControllers */,
+				26C7C3771AF960EA00D99828 /* DataModel */,
 				26C7C3571AF95F4D00D99828 /* Images.xcassets */,
 				26C7C3591AF95F4D00D99828 /* LaunchScreen.xib */,
 				26C7C34A1AF95F4D00D99828 /* Supporting Files */,
@@ -98,6 +116,9 @@
 			children = (
 				26C7C34B1AF95F4D00D99828 /* Info.plist */,
 				26C7C34C1AF95F4D00D99828 /* main.m */,
+				26C7C37E1AF961DB00D99828 /* Quicksand-Bold.ttf */,
+				26C7C37F1AF961DB00D99828 /* Quicksand-Light.ttf */,
+				26C7C3801AF961DB00D99828 /* Quicksand-Regular.ttf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +138,30 @@
 				26C7C3651AF95F4D00D99828 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26C7C3761AF960B400D99828 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				26C7C3511AF95F4D00D99828 /* RMLoginVC.h */,
+				26C7C3731AF9609F00D99828 /* RMTruckEditVC.h */,
+				26C7C3741AF9609F00D99828 /* RMTruckEditVC.m */,
+				26C7C3701AF9607F00D99828 /* RMCheckInVC.h */,
+				26C7C3711AF9607F00D99828 /* RMCheckInVC.m */,
+				26C7C3521AF95F4D00D99828 /* RMLoginVC.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		26C7C3771AF960EA00D99828 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				26C7C3781AF9611300D99828 /* RMDataLoader.h */,
+				26C7C3791AF9611300D99828 /* RMDataLoader.m */,
+				26C7C37B1AF9612F00D99828 /* RMTruck.h */,
+				26C7C37C1AF9612F00D99828 /* RMTruck.m */,
+			);
+			name = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C7C3561AF95F4D00D99828 /* Main.storyboard in Resources */,
+				26C7C3831AF961DB00D99828 /* Quicksand-Regular.ttf in Resources */,
 				26C7C35B1AF95F4D00D99828 /* LaunchScreen.xib in Resources */,
 				26C7C3581AF95F4D00D99828 /* Images.xcassets in Resources */,
+				26C7C3811AF961DB00D99828 /* Quicksand-Bold.ttf in Resources */,
+				26C7C3821AF961DB00D99828 /* Quicksand-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +267,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C7C3531AF95F4D00D99828 /* ViewController.m in Sources */,
+				26C7C3751AF9609F00D99828 /* RMTruckEditVC.m in Sources */,
+				26C7C3531AF95F4D00D99828 /* RMLoginVC.m in Sources */,
+				26C7C3721AF9607F00D99828 /* RMCheckInVC.m in Sources */,
+				26C7C37D1AF9612F00D99828 /* RMTruck.m in Sources */,
 				26C7C3501AF95F4D00D99828 /* AppDelegate.m in Sources */,
 				26C7C34D1AF95F4D00D99828 /* main.m in Sources */,
+				26C7C37A1AF9611300D99828 /* RMDataLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CornerKitchen/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CornerKitchen/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
