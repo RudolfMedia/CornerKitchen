@@ -21,6 +21,8 @@
 		26C7C3811AF961DB00D99828 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C37E1AF961DB00D99828 /* Quicksand-Bold.ttf */; };
 		26C7C3821AF961DB00D99828 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C37F1AF961DB00D99828 /* Quicksand-Light.ttf */; };
 		26C7C3831AF961DB00D99828 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C3801AF961DB00D99828 /* Quicksand-Regular.ttf */; };
+		26C7C3851AFA9AAB00D99828 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C7C3841AFA9AAB00D99828 /* MapKit.framework */; };
+		26C7C3871AFA9AB000D99828 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C7C3861AFA9AB000D99828 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		26C7C37E1AF961DB00D99828 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		26C7C37F1AF961DB00D99828 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		26C7C3801AF961DB00D99828 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		26C7C3841AFA9AAB00D99828 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		26C7C3861AFA9AB000D99828 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C7C3871AFA9AB000D99828 /* CoreLocation.framework in Frameworks */,
+				26C7C3851AFA9AAB00D99828 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,8 @@
 		26C7C33E1AF95F4D00D99828 = {
 			isa = PBXGroup;
 			children = (
+				26C7C3861AFA9AB000D99828 /* CoreLocation.framework */,
+				26C7C3841AFA9AAB00D99828 /* MapKit.framework */,
 				26C7C3491AF95F4D00D99828 /* CornerKitchen */,
 				26C7C3631AF95F4D00D99828 /* CornerKitchenTests */,
 				26C7C3481AF95F4D00D99828 /* Products */,

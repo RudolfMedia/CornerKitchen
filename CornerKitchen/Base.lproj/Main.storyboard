@@ -52,9 +52,26 @@
                     <view key="view" contentMode="scaleToFill" id="Xa4-3s-2lz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gSS-h9-hky">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Cpr-bh-ICq" id="KNz-IX-dgH"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gSS-h9-hky" secondAttribute="trailing" id="II3-JO-xcA"/>
+                            <constraint firstItem="gSS-h9-hky" firstAttribute="leading" secondItem="Xa4-3s-2lz" secondAttribute="leading" id="U5U-4O-8hU"/>
+                            <constraint firstItem="gSS-h9-hky" firstAttribute="top" secondItem="Xa4-3s-2lz" secondAttribute="top" id="ZT5-4c-dP3"/>
+                            <constraint firstAttribute="bottom" secondItem="gSS-h9-hky" secondAttribute="bottom" id="qj5-Yr-pfc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Corner Kitchen" id="O8Z-w4-urE"/>
+                    <connections>
+                        <outlet property="checkinMapView" destination="gSS-h9-hky" id="34D-lN-iKD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E20-Km-B8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

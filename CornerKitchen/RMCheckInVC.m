@@ -8,7 +8,11 @@
 
 #import "RMCheckInVC.h"
 
-@interface RMCheckInVC ()
+@interface RMCheckInVC ()<MKMapViewDelegate, CLLocationManagerDelegate>
+
+
+@property (weak, nonatomic) IBOutlet MKMapView *checkinMapView;
+@property CLLocationManager *locationManager;
 
 @end
 
@@ -17,22 +21,47 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated{
+
+    [self.locationManager startUpdatingLocation];
+
 }
 
-/*
-#pragma mark - Navigation
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    for (CLLocation *current in locations) {
+
+        if (current.horizontalAccuracy < 150 && current.verticalAccuracy < 150) {
+
+            [self.locationManager stopUpdatingLocation];
+            [self setMapViewRegionWithLocation:self.locationManager.location.coordinate];
+            break;
+
+        }
+    }
+
 }
-*/
+
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+
+    NSLog(@"%@", error);
+
+}
+
+
+-(void)setMapViewRegionWithLocation:(CLLocationCoordinate2D)location{
+
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 500, 500);
+    [self.checkinMapView setRegion:region animated:YES];
+
+}
+
+
 
 @end
