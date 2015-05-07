@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nQ5-Ju-DXE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nQ5-Ju-DXE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Quicksand-Bold.ttf">
+            <string>Quicksand-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--LoginVC-->
         <scene sceneID="ufC-wZ-h7g">
@@ -59,9 +64,27 @@
                                     <outlet property="delegate" destination="Cpr-bh-ICq" id="KNz-IX-dgH"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-yS-mS8">
+                                <rect key="frame" x="60" y="406" width="200" height="43"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="4mk-Rr-yS3"/>
+                                    <constraint firstAttribute="width" constant="200" id="tGg-sO-Fbz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="20"/>
+                                <state key="normal" title="Check-In">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCheckinPressed:" destination="Cpr-bh-ICq" eventType="touchUpInside" id="rsc-uy-Bv5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jUb-7c-O43" firstAttribute="top" secondItem="AhS-yS-mS8" secondAttribute="bottom" constant="70" id="1PI-dl-SfJ"/>
+                            <constraint firstAttribute="centerX" secondItem="AhS-yS-mS8" secondAttribute="centerX" id="1wB-px-XNA"/>
                             <constraint firstAttribute="trailing" secondItem="gSS-h9-hky" secondAttribute="trailing" id="II3-JO-xcA"/>
                             <constraint firstItem="gSS-h9-hky" firstAttribute="leading" secondItem="Xa4-3s-2lz" secondAttribute="leading" id="U5U-4O-8hU"/>
                             <constraint firstItem="gSS-h9-hky" firstAttribute="top" secondItem="Xa4-3s-2lz" secondAttribute="top" id="ZT5-4c-dP3"/>
@@ -70,6 +93,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Corner Kitchen" id="O8Z-w4-urE"/>
                     <connections>
+                        <outlet property="checkinButton" destination="AhS-yS-mS8" id="iD1-cT-U63"/>
                         <outlet property="checkinMapView" destination="gSS-h9-hky" id="34D-lN-iKD"/>
                     </connections>
                 </viewController>
@@ -86,6 +110,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="DgH-u4-5lX" kind="relationship" relationship="viewControllers" id="PfT-qc-o0o"/>
