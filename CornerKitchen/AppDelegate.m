@@ -22,7 +22,7 @@
 
     [[UINavigationBar appearance] setTitleTextAttributes:@{
        NSForegroundColorAttributeName : [UIColor whiteColor],
-       NSFontAttributeName : [UIFont fontWithName:@"Quicksand-Regular" size:22]
+       NSFontAttributeName : [UIFont fontWithName:@"Quicksand-Bold" size:22]
 
        }];
 
