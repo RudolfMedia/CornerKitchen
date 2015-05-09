@@ -23,6 +23,8 @@
 		26C7C3831AF961DB00D99828 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C3801AF961DB00D99828 /* Quicksand-Regular.ttf */; };
 		26C7C3851AFA9AAB00D99828 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C7C3841AFA9AAB00D99828 /* MapKit.framework */; };
 		26C7C3871AFA9AB000D99828 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C7C3861AFA9AB000D99828 /* CoreLocation.framework */; };
+		26C80BBA1AFE82EF003137F6 /* RMTruckDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C80BB91AFE82EF003137F6 /* RMTruckDetailView.m */; };
+		26C80BBC1AFE831F003137F6 /* RMTruckDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C80BBB1AFE831F003137F6 /* RMTruckDetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,9 @@
 		26C7C3801AF961DB00D99828 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		26C7C3841AFA9AAB00D99828 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		26C7C3861AFA9AB000D99828 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		26C80BB81AFE82EF003137F6 /* RMTruckDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTruckDetailView.h; sourceTree = "<group>"; };
+		26C80BB91AFE82EF003137F6 /* RMTruckDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTruckDetailView.m; sourceTree = "<group>"; };
+		26C80BBB1AFE831F003137F6 /* RMTruckDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTruckDetailView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 				26C7C34F1AF95F4D00D99828 /* AppDelegate.m */,
 				26C7C3761AF960B400D99828 /* ViewControllers */,
 				26C7C3771AF960EA00D99828 /* DataModel */,
+				26C80BB71AFE82C6003137F6 /* CustomViews */,
 				26C7C3571AF95F4D00D99828 /* Images.xcassets */,
 				26C7C3591AF95F4D00D99828 /* LaunchScreen.xib */,
 				26C7C34A1AF95F4D00D99828 /* Supporting Files */,
@@ -170,6 +176,16 @@
 				26C7C37C1AF9612F00D99828 /* RMTruck.m */,
 			);
 			name = DataModel;
+			sourceTree = "<group>";
+		};
+		26C80BB71AFE82C6003137F6 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				26C80BB81AFE82EF003137F6 /* RMTruckDetailView.h */,
+				26C80BB91AFE82EF003137F6 /* RMTruckDetailView.m */,
+				26C80BBB1AFE831F003137F6 /* RMTruckDetailView.xib */,
+			);
+			name = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +270,7 @@
 			files = (
 				26C7C3561AF95F4D00D99828 /* Main.storyboard in Resources */,
 				26C7C3831AF961DB00D99828 /* Quicksand-Regular.ttf in Resources */,
+				26C80BBC1AFE831F003137F6 /* RMTruckDetailView.xib in Resources */,
 				26C7C35B1AF95F4D00D99828 /* LaunchScreen.xib in Resources */,
 				26C7C3581AF95F4D00D99828 /* Images.xcassets in Resources */,
 				26C7C3811AF961DB00D99828 /* Quicksand-Bold.ttf in Resources */,
@@ -279,6 +296,7 @@
 				26C7C3531AF95F4D00D99828 /* RMLoginVC.m in Sources */,
 				26C7C3721AF9607F00D99828 /* RMCheckInVC.m in Sources */,
 				26C7C37D1AF9612F00D99828 /* RMTruck.m in Sources */,
+				26C80BBA1AFE82EF003137F6 /* RMTruckDetailView.m in Sources */,
 				26C7C3501AF95F4D00D99828 /* AppDelegate.m in Sources */,
 				26C7C34D1AF95F4D00D99828 /* main.m in Sources */,
 				26C7C37A1AF9611300D99828 /* RMDataLoader.m in Sources */,

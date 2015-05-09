@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet MKMapView *checkinMapView;
 @property CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UIButton *checkinButton;
+@property CLLocationCoordinate2D checkinLocationCoordinate;
 
 @end
 
@@ -111,7 +112,8 @@
 
 - (IBAction)onCheckinPressed:(id)sender {
 
-
+    self.checkinLocationCoordinate = self.checkinMapView.centerCoordinate;
+    NSLog(@"%f", self.checkinLocationCoordinate.latitude);
 
 }
 
