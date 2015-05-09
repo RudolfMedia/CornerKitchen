@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nQ5-Ju-DXE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Quicksand-Bold.ttf">
@@ -40,43 +39,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r4O-4R-Ws0">
-                                <rect key="frame" x="0.0" y="64" width="320" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="r4O-4R-Ws0" secondAttribute="height" multiplier="16:9" id="0Wr-Kk-2XN"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Truck Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2x-0f-Id8">
-                                <rect key="frame" x="16" y="181" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type of Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itx-fF-GoA">
-                                <rect key="frame" x="16" y="210" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClX-N5-Gd5">
-                                <rect key="frame" x="16" y="281" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6IK-b7-LXq">
-                                <rect key="frame" x="16" y="310" width="288" height="201"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGJ-dY-B1k">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="r4O-4R-Ws0" firstAttribute="top" secondItem="6Jd-Us-ewx" secondAttribute="bottom" id="1yB-Bp-Zb0"/>
-                            <constraint firstAttribute="trailing" secondItem="r4O-4R-Ws0" secondAttribute="trailing" id="bkI-kI-wDo"/>
-                            <constraint firstItem="r4O-4R-Ws0" firstAttribute="leading" secondItem="12A-T9-LpW" secondAttribute="leading" id="lyi-qR-mj0"/>
+                            <constraint firstAttribute="trailing" secondItem="XGJ-dY-B1k" secondAttribute="trailing" id="4Bt-q1-nsY"/>
+                            <constraint firstItem="XGJ-dY-B1k" firstAttribute="leading" secondItem="12A-T9-LpW" secondAttribute="leading" id="Faj-5Q-2CA"/>
+                            <constraint firstItem="XGJ-dY-B1k" firstAttribute="top" secondItem="12A-T9-LpW" secondAttribute="top" id="Qsy-rh-wg1"/>
+                            <constraint firstAttribute="bottom" secondItem="XGJ-dY-B1k" secondAttribute="bottom" id="Utf-3z-xKh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Corner Kitchen" id="TJw-f3-g3v"/>
+                    <connections>
+                        <outlet property="contentScroll" destination="XGJ-dY-B1k" id="cKX-Aq-QpB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slX-eZ-mqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
