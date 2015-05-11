@@ -3,58 +3,103 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Quicksand-Bold.ttf">
+            <string>Quicksand-Bold</string>
+            <string>Quicksand-Bold</string>
+            <string>Quicksand-Bold</string>
+        </mutableArray>
+        <mutableArray key="Quicksand-Regular.ttf">
+            <string>Quicksand-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RMTruckDetailView">
-            <rect key="frame" x="4" y="0.0" width="320" height="718"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="796"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5f-I8-EUG">
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u5f-I8-EUG">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="718"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57x-Sf-6jN">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57x-Sf-6jN">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Truck Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQk-aF-8Um">
-                            <rect key="frame" x="16" y="108" width="288" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Truck Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQk-aF-8Um">
+                            <rect key="frame" x="16" y="226" width="288" height="21"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="20"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Type of Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGT-df-GV3">
+                            <rect key="frame" x="16" y="255" width="288" height="21"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type of Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGT-df-GV3">
-                            <rect key="frame" x="16" y="137" width="288" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-IU-Efw">
-                            <rect key="frame" x="16" y="206" width="288" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5sV-CA-xBf">
-                            <rect key="frame" x="16" y="235" width="288" height="292"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </tableView>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nsJ-CJ-VvL">
+                            <rect key="frame" x="16" y="302" width="288" height="408"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5sV-CA-xBf">
+                                    <rect key="frame" x="8" y="47" width="272" height="353"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-IU-Efw">
+                                    <rect key="frame" x="39" y="8" width="211" height="21"/>
+                                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="20"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="5sV-CA-xBf" firstAttribute="leading" secondItem="nsJ-CJ-VvL" secondAttribute="leading" constant="8" id="3Md-tx-FI8"/>
+                                <constraint firstItem="OV1-IU-Efw" firstAttribute="top" secondItem="nsJ-CJ-VvL" secondAttribute="top" constant="8" id="4zg-It-8Ii"/>
+                                <constraint firstAttribute="centerX" secondItem="OV1-IU-Efw" secondAttribute="centerX" id="MJT-KZ-QT2"/>
+                                <constraint firstAttribute="bottom" secondItem="5sV-CA-xBf" secondAttribute="bottom" constant="8" id="f03-8L-akA"/>
+                                <constraint firstAttribute="trailing" secondItem="5sV-CA-xBf" secondAttribute="trailing" constant="8" id="qpn-Vl-IRL"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="320" id="LoG-ak-2xy"/>
-                        <constraint firstAttribute="height" constant="718" id="lNn-ci-EIT"/>
+                        <constraint firstAttribute="centerX" secondItem="vGT-df-GV3" secondAttribute="centerX" id="EhB-HS-WZb"/>
+                        <constraint firstAttribute="trailing" secondItem="nsJ-CJ-VvL" secondAttribute="trailing" constant="16" id="Huh-QS-Xmi"/>
+                        <constraint firstAttribute="centerX" secondItem="pQk-aF-8Um" secondAttribute="centerX" id="MTh-bY-JPo"/>
+                        <constraint firstItem="nsJ-CJ-VvL" firstAttribute="leading" secondItem="u5f-I8-EUG" secondAttribute="leading" constant="16" id="MwY-ZQ-KMz"/>
+                        <constraint firstItem="57x-Sf-6jN" firstAttribute="top" secondItem="u5f-I8-EUG" secondAttribute="top" id="PlU-pV-Y4Y"/>
+                        <constraint firstAttribute="trailing" secondItem="57x-Sf-6jN" secondAttribute="trailing" id="gUB-am-AJm"/>
+                        <constraint firstItem="57x-Sf-6jN" firstAttribute="leading" secondItem="u5f-I8-EUG" secondAttribute="leading" id="j2J-8s-Sh5"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpc-tC-TKc">
+                    <rect key="frame" x="16" y="726" width="288" height="50"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="20"/>
+                    <state key="normal" title="Edit Profile">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="cpc-tC-TKc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="5Yt-BW-7ZV"/>
                 <constraint firstItem="u5f-I8-EUG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="G2f-rK-ZfS"/>
-                <constraint firstAttribute="bottom" secondItem="u5f-I8-EUG" secondAttribute="bottom" id="eEV-6m-wbm"/>
+                <constraint firstItem="cpc-tC-TKc" firstAttribute="top" secondItem="u5f-I8-EUG" secondAttribute="bottom" constant="8" id="I80-m1-yQe"/>
                 <constraint firstItem="u5f-I8-EUG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kTf-63-jmB"/>
                 <constraint firstAttribute="trailing" secondItem="u5f-I8-EUG" secondAttribute="trailing" id="nAh-Pf-vHa"/>
+                <constraint firstAttribute="trailing" secondItem="cpc-tC-TKc" secondAttribute="trailing" constant="16" id="wKT-J7-4de"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="90" y="416"/>
+            <connections>
+                <outlet property="editProfileButton" destination="cpc-tC-TKc" id="HhP-qf-zl6"/>
+                <outlet property="menuTableView" destination="5sV-CA-xBf" id="pcj-fv-yOQ"/>
+                <outlet property="menutView" destination="nsJ-CJ-VvL" id="hGw-lb-bln"/>
+            </connections>
+            <point key="canvasLocation" x="90" y="455"/>
         </view>
     </objects>
 </document>

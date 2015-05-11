@@ -11,5 +11,8 @@
 @interface RMTruckDetailView : UIView
 
 + (id)truckDetailCustomView;
+@property (weak, nonatomic) IBOutlet UIView *menutView;
+@property (weak, nonatomic) IBOutlet UITableView *menuTableView;
+@property (weak, nonatomic) IBOutlet UIButton *editProfileButton;
 
 @end

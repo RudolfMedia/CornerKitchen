@@ -23,15 +23,27 @@
 
     self.detailView = [RMTruckDetailView truckDetailCustomView];
     self.contentScroll.delegate = self;
-    //self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.detailView.frame.size.height);
-    //CGRect sizedFrame = CGRectMake(0, 0, self.view.frame.size.width, self.detailView.frame.size.height);
-    //self.detailView.frame = sizedFrame;
+    self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.detailView.frame.size.height);
+
+    [self roundViewCorners:self.detailView.menuTableView];
+    [self roundViewCorners:self.detailView.menutView];
+    [self roundViewCorners:self.detailView.editProfileButton];
+
 
     [self.contentScroll addSubview:self.detailView];
 
 
 }
 
+
+#pragma mark - ViewFormatting
+
+- (UIView *)roundViewCorners:(UIView *)viewToRound{
+
+    viewToRound.layer.masksToBounds = YES;
+    viewToRound.layer.cornerRadius = 5;
+    return viewToRound;
+}
 
 
 @end
