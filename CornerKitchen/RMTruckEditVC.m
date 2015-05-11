@@ -12,7 +12,7 @@
 @interface RMTruckEditVC ()<UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScroll;
-@property (atomic, strong) RMTruckDetailView *detailView;
+@property RMTruckDetailView *detailView;
 
 @end
 
@@ -23,9 +23,9 @@
 
     self.detailView = [RMTruckDetailView truckDetailCustomView];
     self.contentScroll.delegate = self;
-    self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.detailView.frame.size.height);
-    CGRect sizedFrame = CGRectMake(0, 0, self.view.frame.size.width, self.detailView.frame.size.height);
-    self.detailView.frame = sizedFrame;
+    //self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.detailView.frame.size.height);
+    //CGRect sizedFrame = CGRectMake(0, 0, self.view.frame.size.width, self.detailView.frame.size.height);
+    //self.detailView.frame = sizedFrame;
 
     [self.contentScroll addSubview:self.detailView];
 

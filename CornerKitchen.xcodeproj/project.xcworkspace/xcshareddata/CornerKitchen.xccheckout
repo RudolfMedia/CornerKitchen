@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>94971548-6630-4430-8494-FDBBDB295B5B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>CornerKitchen</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2BD1A7CD342E33DBC604F600BCB71796D07E428A</key>
 		<string>https://github.com/RudolfMedia/CornerKitchen.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CornerKitchen.xcodeproj/project.xcworkspace</string>
+	<string>CornerKitchen.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2BD1A7CD342E33DBC604F600BCB71796D07E428A</key>
