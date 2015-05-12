@@ -8,6 +8,7 @@
 
 #import "RMTruckEditVC.h"
 #import "RMTruckDetailView.h"
+#import "RMContentEditVC.h"
 
 @interface RMTruckEditVC ()<UIScrollViewDelegate>
 
@@ -24,6 +25,7 @@
     self.detailView = [RMTruckDetailView truckDetailCustomView];
     self.contentScroll.delegate = self;
     self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.detailView.frame.size.height);
+    self.contentScroll.decelerationRate = UIScrollViewDecelerationRateFast;
 
     [self roundViewCorners:self.detailView.menuTableView];
     [self roundViewCorners:self.detailView.menutView];
@@ -31,6 +33,7 @@
 
 
     [self.contentScroll addSubview:self.detailView];
+    [self applySelectors];
 
 
 }
@@ -43,6 +46,27 @@
     viewToRound.layer.masksToBounds = YES;
     viewToRound.layer.cornerRadius = 5;
     return viewToRound;
+}
+
+#pragma mark - Selectors
+
+-(void)applySelectors{
+
+    [self.detailView.editProfileButton addTarget:self
+                                          action:@selector(onEditPressed)
+                                forControlEvents:UIControlEventTouchUpInside];
+
+}
+
+-(void)onEditPressed{
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RMContentEditVC *editVC = [storyboard instantiateViewControllerWithIdentifier:@"EditTruck"];
+
+    [self presentViewController:editVC animated:YES completion:^{
+
+    }];
+
 }
 
 

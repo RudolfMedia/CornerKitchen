@@ -60,6 +60,38 @@
             </objects>
             <point key="canvasLocation" x="1567" y="596"/>
         </scene>
+        <!--Content EditVC-->
+        <scene sceneID="cF6-ss-9qO">
+            <objects>
+                <viewController storyboardIdentifier="EditTruck" id="mv8-Ar-CI5" customClass="RMContentEditVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e30-QF-ybz"/>
+                        <viewControllerLayoutGuide type="bottom" id="gK6-mI-y2R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="adg-sJ-hPq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbg-Pb-9AG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Tbg-Pb-9AG" secondAttribute="trailing" id="1ai-a0-R2f"/>
+                            <constraint firstAttribute="bottom" secondItem="Tbg-Pb-9AG" secondAttribute="bottom" id="WXr-tZ-EuE"/>
+                            <constraint firstItem="Tbg-Pb-9AG" firstAttribute="top" secondItem="adg-sJ-hPq" secondAttribute="top" id="ddI-Rq-Z6G"/>
+                            <constraint firstItem="Tbg-Pb-9AG" firstAttribute="leading" secondItem="adg-sJ-hPq" secondAttribute="leading" id="p2i-I2-mGY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentScroll" destination="Tbg-Pb-9AG" id="Cht-Uy-V6r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ayK-dg-kOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1972" y="596"/>
+        </scene>
         <!--Corner Kitchen-->
         <scene sceneID="zLe-d9-z7U">
             <objects>
@@ -72,12 +104,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gSS-h9-hky">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Cpr-bh-ICq" id="KNz-IX-dgH"/>
-                                </connections>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-yS-mS8">
                                 <rect key="frame" x="60" y="406" width="200" height="43"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -94,6 +120,12 @@
                                     <action selector="onCheckinPressed:" destination="Cpr-bh-ICq" eventType="touchUpInside" id="rsc-uy-Bv5"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gSS-h9-hky">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Cpr-bh-ICq" id="KNz-IX-dgH"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

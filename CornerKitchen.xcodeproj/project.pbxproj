@@ -23,6 +23,9 @@
 		26916F141B016E8E00091113 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916F131B016E8E00091113 /* SystemConfiguration.framework */; };
 		26916F161B016E9800091113 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916F151B016E9800091113 /* libz.dylib */; };
 		26916F181B016EA500091113 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916F171B016EA500091113 /* libsqlite3.dylib */; };
+		26916F1C1B02359200091113 /* RMContentEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26916F1B1B02359200091113 /* RMContentEditVC.m */; };
+		26916F1F1B02468900091113 /* RMTruckEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26916F1E1B02468900091113 /* RMTruckEditView.m */; };
+		26916F211B0246A000091113 /* RMTruckEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26916F201B0246A000091113 /* RMTruckEditView.xib */; };
 		26C7C34D1AF95F4D00D99828 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C34C1AF95F4D00D99828 /* main.m */; };
 		26C7C3501AF95F4D00D99828 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C34F1AF95F4D00D99828 /* AppDelegate.m */; };
 		26C7C3531AF95F4D00D99828 /* RMLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3521AF95F4D00D99828 /* RMLoginVC.m */; };
@@ -70,6 +73,11 @@
 		26916F131B016E8E00091113 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		26916F151B016E9800091113 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		26916F171B016EA500091113 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		26916F1A1B02359200091113 /* RMContentEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMContentEditVC.h; sourceTree = "<group>"; };
+		26916F1B1B02359200091113 /* RMContentEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMContentEditVC.m; sourceTree = "<group>"; };
+		26916F1D1B02468900091113 /* RMTruckEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTruckEditView.h; sourceTree = "<group>"; };
+		26916F1E1B02468900091113 /* RMTruckEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTruckEditView.m; sourceTree = "<group>"; };
+		26916F201B0246A000091113 /* RMTruckEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTruckEditView.xib; sourceTree = "<group>"; };
 		26C7C3471AF95F4D00D99828 /* CornerKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CornerKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C7C34B1AF95F4D00D99828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C7C34C1AF95F4D00D99828 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -235,6 +243,8 @@
 				26C7C3741AF9609F00D99828 /* RMTruckEditVC.m */,
 				26C7C3701AF9607F00D99828 /* RMCheckInVC.h */,
 				26C7C3711AF9607F00D99828 /* RMCheckInVC.m */,
+				26916F1A1B02359200091113 /* RMContentEditVC.h */,
+				26916F1B1B02359200091113 /* RMContentEditVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -256,6 +266,9 @@
 				26C80BB81AFE82EF003137F6 /* RMTruckDetailView.h */,
 				26C80BB91AFE82EF003137F6 /* RMTruckDetailView.m */,
 				26C80BBB1AFE831F003137F6 /* RMTruckDetailView.xib */,
+				26916F1D1B02468900091113 /* RMTruckEditView.h */,
+				26916F1E1B02468900091113 /* RMTruckEditView.m */,
+				26916F201B0246A000091113 /* RMTruckEditView.xib */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -345,6 +358,7 @@
 				26C80BBC1AFE831F003137F6 /* RMTruckDetailView.xib in Resources */,
 				26C7C35B1AF95F4D00D99828 /* LaunchScreen.xib in Resources */,
 				26C7C3581AF95F4D00D99828 /* Images.xcassets in Resources */,
+				26916F211B0246A000091113 /* RMTruckEditView.xib in Resources */,
 				26C7C3811AF961DB00D99828 /* Quicksand-Bold.ttf in Resources */,
 				26C7C3821AF961DB00D99828 /* Quicksand-Light.ttf in Resources */,
 			);
@@ -365,8 +379,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C7C3751AF9609F00D99828 /* RMTruckEditVC.m in Sources */,
+				26916F1F1B02468900091113 /* RMTruckEditView.m in Sources */,
 				26C7C3531AF95F4D00D99828 /* RMLoginVC.m in Sources */,
 				26C7C3721AF9607F00D99828 /* RMCheckInVC.m in Sources */,
+				26916F1C1B02359200091113 /* RMContentEditVC.m in Sources */,
 				26C7C37D1AF9612F00D99828 /* RMTruck.m in Sources */,
 				26C80BBA1AFE82EF003137F6 /* RMTruckDetailView.m in Sources */,
 				26C7C3501AF95F4D00D99828 /* AppDelegate.m in Sources */,
