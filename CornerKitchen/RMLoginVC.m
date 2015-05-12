@@ -26,6 +26,13 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+
+    [self.isPersonButton setHidden:YES];
+    [self.isTruckButton setHidden:YES];
+    
+}
+
 
 #pragma mark - Actions
 
@@ -38,7 +45,8 @@
 
 - (IBAction)onSignupPressed:(id)sender{
 
-
+    [self.isPersonButton setHidden:NO];
+    [self.isTruckButton setHidden:NO];
 
 }
 
