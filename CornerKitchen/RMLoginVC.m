@@ -9,6 +9,10 @@
 #import "RMLoginVC.h"
 
 @interface RMLoginVC ()
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+@property (weak, nonatomic) IBOutlet UIButton *isTruckButton;
+@property (weak, nonatomic) IBOutlet UIButton *isPersonButton;
 
 @end
 
@@ -16,12 +20,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+
+
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - Actions
+
+- (IBAction)onLoginPressed:(id)sender{
+
+
+
 }
+
+
+- (IBAction)onSignupPressed:(id)sender{
+
+
+
+}
+
+- (IBAction)onIsPersonPressed:(id)sender {
+
+
+
+}
+
+
+- (IBAction)onIsTruckPressed:(id)sender {
+
+
+}
+
+
+
+
+
+
 
 @end

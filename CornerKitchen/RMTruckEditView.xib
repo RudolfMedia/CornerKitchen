@@ -73,7 +73,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="0pV-1O-iv1"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                             <state key="normal" title="Save">
                                 <color key="titleColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,7 +85,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="ig6-3a-En9"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                             <state key="normal" title="Cancel">
                                 <color key="titleColor" red="0.86666666670000003" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

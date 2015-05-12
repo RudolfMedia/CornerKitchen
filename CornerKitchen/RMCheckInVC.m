@@ -77,6 +77,7 @@
     self.checkinButton.alpha = 0;
     [UIView animateWithDuration:.2
                      animations:^{
+
                          self.checkinButton.alpha = 1;
                      }
                      completion:^(BOOL finished) {
@@ -93,7 +94,8 @@
                          self.checkinButton.alpha = 0;
                      }
                      completion:^(BOOL finished) {
-                         
+
+                         NSLog(@"FINISHED");
 
                      }];
 }

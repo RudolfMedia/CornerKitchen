@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2610FFD01B02965E00437076 /* RMTruckSignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610FFCF1B02965E00437076 /* RMTruckSignUpVC.m */; };
+		2610FFD31B0296A400437076 /* RMPersonSignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610FFD21B0296A400437076 /* RMPersonSignUpVC.m */; };
 		26916EFF1B016DC100091113 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916EF91B016DC100091113 /* Bolts.framework */; };
 		26916F001B016DC100091113 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916EFA1B016DC100091113 /* Parse.framework */; };
 		26916F011B016DC100091113 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916EFB1B016DC100091113 /* ParseCrashReporting.framework */; };
@@ -57,6 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2610FFCE1B02965E00437076 /* RMTruckSignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTruckSignUpVC.h; sourceTree = "<group>"; };
+		2610FFCF1B02965E00437076 /* RMTruckSignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTruckSignUpVC.m; sourceTree = "<group>"; };
+		2610FFD11B0296A400437076 /* RMPersonSignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPersonSignUpVC.h; sourceTree = "<group>"; };
+		2610FFD21B0296A400437076 /* RMPersonSignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPersonSignUpVC.m; sourceTree = "<group>"; };
 		26916EF91B016DC100091113 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		26916EFA1B016DC100091113 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		26916EFB1B016DC100091113 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -245,6 +251,10 @@
 				26C7C3711AF9607F00D99828 /* RMCheckInVC.m */,
 				26916F1A1B02359200091113 /* RMContentEditVC.h */,
 				26916F1B1B02359200091113 /* RMContentEditVC.m */,
+				2610FFCE1B02965E00437076 /* RMTruckSignUpVC.h */,
+				2610FFCF1B02965E00437076 /* RMTruckSignUpVC.m */,
+				2610FFD11B0296A400437076 /* RMPersonSignUpVC.h */,
+				2610FFD21B0296A400437076 /* RMPersonSignUpVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -380,6 +390,7 @@
 			files = (
 				26C7C3751AF9609F00D99828 /* RMTruckEditVC.m in Sources */,
 				26916F1F1B02468900091113 /* RMTruckEditView.m in Sources */,
+				2610FFD01B02965E00437076 /* RMTruckSignUpVC.m in Sources */,
 				26C7C3531AF95F4D00D99828 /* RMLoginVC.m in Sources */,
 				26C7C3721AF9607F00D99828 /* RMCheckInVC.m in Sources */,
 				26916F1C1B02359200091113 /* RMContentEditVC.m in Sources */,
@@ -387,6 +398,7 @@
 				26C80BBA1AFE82EF003137F6 /* RMTruckDetailView.m in Sources */,
 				26C7C3501AF95F4D00D99828 /* AppDelegate.m in Sources */,
 				26C7C34D1AF95F4D00D99828 /* main.m in Sources */,
+				2610FFD31B0296A400437076 /* RMPersonSignUpVC.m in Sources */,
 				26C7C37A1AF9611300D99828 /* RMDataLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
