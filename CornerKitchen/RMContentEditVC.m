@@ -9,10 +9,12 @@
 #import "RMContentEditVC.h"
 #import "RMTruckEditView.h"
 
-@interface RMContentEditVC ()<UIScrollViewDelegate>
+@interface RMContentEditVC ()<UIScrollViewDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScroll;
 @property RMTruckEditView *editView;
+@property NSString *errorString;
+@property UIAlertView *alert;
 
 
 @end
@@ -35,6 +37,12 @@
     [self roundViewCorners:self.editView.cancelButton];
 
     [self applySelectors];
+
+    [self fillOutDetails:self.currentTruck];
+
+    UITapGestureRecognizer *changeImage = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                  action:@selector(presentImagePicker)];
+    [self.editView.truckImageView addGestureRecognizer:changeImage];
 }
 
 #pragma mark - View formatting
@@ -54,15 +62,136 @@
                                    action:@selector(onCancelPressed)
                          forControlEvents:UIControlEventTouchUpInside];
 
+    [self.editView.saveButton addTarget:self
+                                 action:@selector(onSavePressed)
+                       forControlEvents:UIControlEventTouchUpInside];
+
+}
+
+- (void)presentImagePicker{
+
+
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+
+    [self presentViewController:picker animated:YES completion:NULL];
+
+
+
 }
 
 - (void)onCancelPressed{
 
-    [self dismissViewControllerAnimated:YES completion:^{
 
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        RMContentEditVC *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LOGIN_MAIN"];
 
-    }];
+        [self presentViewController:loginVC animated:YES completion:^{
+            
+        }];
+
 }
+
+-(void)onSavePressed{
+
+    if (self.editView.truckImageView.image == nil) {
+
+        self.errorString = @"Show Us Your Truck! We Know You Worked Hard On It.";
+        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                message:self.errorString
+                                               delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+        [self.alert show];
+
+    }
+
+    else if (self.editView.truckLogin.text.length < 5){
+
+        self.errorString = @"You Need An Email To Log In";
+        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                message:self.errorString
+                                               delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+        [self.alert show];
+
+    }
+
+    else if (self.editView.truckName.text.length < 3){
+
+        self.errorString = @"Please Enter Your Truck Name";
+        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                message:self.errorString
+                                               delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+        [self.alert show];
+
+    }
+    else if (self.editView.truckFoodType.text.length < 3){
+
+        self.errorString = @"Tell Us What Kind Of Food You Serve";
+        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                message:self.errorString
+                                               delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+        [self.alert show];
+
+    }
+
+    else if (self.editView.ownerName.text.length <1){
+
+        self.errorString = @"Please Enter Your Name";
+        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                message:self.errorString
+                                               delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+        [self.alert show];
+
+
+    }
+
+    else{
+
+        //setupprofile
+
+    }
+
+
+
+
+
+}
+
+#pragma mark - content Population
+
+- (void)fillOutDetails:(RMTruck *)visible{
+
+    self.editView.truckLogin.text = visible.email;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end

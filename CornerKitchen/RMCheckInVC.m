@@ -7,6 +7,7 @@
 //
 
 #import "RMCheckInVC.h"
+#import "AppDelegate.h"
 
 @interface RMCheckInVC ()<MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -22,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpTabBar];
 
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -116,6 +118,26 @@
 
     self.checkinLocationCoordinate = self.checkinMapView.centerCoordinate;
     NSLog(@"%f", self.checkinLocationCoordinate.latitude);
+
+}
+
+
+#pragma mark - View Formatting
+
+- (void)setUpTabBar{
+
+    UITabBar *customTabBar = self.tabBarController.tabBar;
+
+    UITabBarItem *checkinTab = [customTabBar.items objectAtIndex:0];
+    checkinTab.image = [[UIImage imageNamed:@"checkin"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    checkinTab.selectedImage = [[UIImage imageNamed:@"checkinPressed"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    checkinTab.title = @"Location";
+
+    UITabBarItem *profileTab = [customTabBar.items objectAtIndex:1];
+    profileTab.image = [[UIImage imageNamed:@"profile"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    profileTab.selectedImage = [[UIImage imageNamed:@"profilePressed"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    profileTab.title = @"Profile";
+
 
 }
 

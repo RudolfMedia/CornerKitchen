@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface RMTruck : NSObject
+
+@property NSString *ownerName;
+@property NSString *password;
+@property NSString *email;
+@property NSString *foodType;
+
 
 @end

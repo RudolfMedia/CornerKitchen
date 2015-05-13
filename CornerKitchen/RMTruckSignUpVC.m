@@ -7,12 +7,17 @@
 //
 
 #import "RMTruckSignUpVC.h"
+#import "RMTruck.h"
+#import "RMContentEditVC.h"
 
 @interface RMTruckSignUpVC ()
 @property (weak, nonatomic) IBOutlet UITextField *truckEmail;
 @property (weak, nonatomic) IBOutlet UITextField *truckPassword;
 @property (weak, nonatomic) IBOutlet UITextField *truckConfirmPass;
 @property (weak, nonatomic) IBOutlet UIButton *setUpTruckButton;
+@property RMTruck *createdTruck;
+@property NSString *errorString;
+@property UIAlertView *alert;
 
 @end
 
@@ -34,9 +39,73 @@
 
 }
 
+
+
 - (IBAction)onSetUpTruckPressed:(id)sender {
 
 
+    if (self.truckEmail.text.length < 5) {
+
+        self.errorString = @"Please Enter a Valid Email";
+        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                message:self.errorString
+                                               delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+        [self.alert show];
+
+    }
+
+
+    else if (self.truckPassword.text.length <5){
+
+        self.errorString = @"Password Must Be At Least 5 Characters Long";
+        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                message:self.errorString
+                                               delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+        [self.alert show];
+
+    }
+
+
+    else if (![self.truckPassword.text isEqualToString:self.truckConfirmPass.text]){
+
+        self.errorString = @"Passwords Don't Match";
+        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                message:self.errorString
+                                               delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+        [self.alert show];
+
+
+
+    }
+
+    else{
+
+    self.createdTruck = [[RMTruck alloc] init];
+    self.createdTruck.email = self.truckEmail.text;
+    self.createdTruck.password = self.truckPassword.text;
+
+    [self performSegueWithIdentifier:@"SETUP_TRUCK" sender:self];
+
+    }
+
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([segue.identifier isEqualToString:@"SETUP_TRUCK"]) {
+
+        RMContentEditVC *destination = [segue destinationViewController];
+        destination.currentTruck = self.createdTruck;
+    }
+
+
+}
+
 
 @end

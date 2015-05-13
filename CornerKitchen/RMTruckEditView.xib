@@ -130,7 +130,12 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="cancelButton" destination="2nF-px-BsD" id="gFn-sJ-JS2"/>
+                <outlet property="ownerName" destination="WQ8-rn-9uz" id="dM7-wL-Ecp"/>
                 <outlet property="saveButton" destination="hoA-et-1IC" id="f78-pd-k3r"/>
+                <outlet property="truckFoodType" destination="CfW-Q1-WBX" id="rr9-h3-NCM"/>
+                <outlet property="truckImageView" destination="HgU-Rf-gah" id="grw-ov-aWg"/>
+                <outlet property="truckLogin" destination="AGa-B3-Mn7" id="6mZ-EX-Qwa"/>
+                <outlet property="truckName" destination="NcD-gO-2Ya" id="OIX-ZO-YYs"/>
             </connections>
             <point key="canvasLocation" x="422" y="360"/>
         </view>

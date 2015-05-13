@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RMTruck.h"
 
 @interface RMContentEditVC : UIViewController
+
+@property (nonatomic, weak) RMTruck *currentTruck;
 
 @end

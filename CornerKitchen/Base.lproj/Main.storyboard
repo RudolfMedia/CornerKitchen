@@ -2,9 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Quicksand-Light.ttf">
+            <string>Quicksand-Light</string>
+        </mutableArray>
         <mutableArray key="Quicksand-Regular.ttf">
+            <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
@@ -31,24 +36,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2t-Jl-XIx">
-                                <rect key="frame" x="16" y="97" width="288" height="30"/>
-                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQ2-WV-01h">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQ2-WV-01h">
                                 <rect key="frame" x="16" y="135" width="288" height="30"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password again, ughh" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHQ-it-hOi">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password again, ughh" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHQ-it-hOi">
                                 <rect key="frame" x="16" y="173" width="288" height="30"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOf-8n-3o9">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOf-8n-3o9">
                                 <rect key="frame" x="16" y="315" width="288" height="50"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jlw-4d-fKO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                                 <state key="normal" title="Setup My Truck">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,23 +61,44 @@
                                     <action selector="onSetUpTruckPressed:" destination="cMY-NQ-yeu" eventType="touchUpInside" id="saa-ef-ENu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cy9-HF-7sf">
-                                <rect key="frame" x="16" y="452" width="288" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cy9-HF-7sf">
+                                <rect key="frame" x="16" y="373" width="288" height="50"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zcD-0H-dNt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                                 <state key="normal" title="I don't own a Food Truck">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2t-Jl-XIx">
+                                <rect key="frame" x="16" y="97" width="288" height="30"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OQ2-WV-01h" firstAttribute="leading" secondItem="qGl-1q-X7o" secondAttribute="leading" constant="16" id="BoB-Ck-dnN"/>
+                            <constraint firstItem="OOf-8n-3o9" firstAttribute="leading" secondItem="qGl-1q-X7o" secondAttribute="leadingMargin" id="D8G-Ts-oor"/>
+                            <constraint firstAttribute="trailing" secondItem="OQ2-WV-01h" secondAttribute="trailing" constant="16" id="O0X-YG-IWg"/>
+                            <constraint firstItem="OOf-8n-3o9" firstAttribute="trailing" secondItem="qGl-1q-X7o" secondAttribute="trailingMargin" id="aYK-YY-dGi"/>
+                            <constraint firstItem="hHQ-it-hOi" firstAttribute="leading" secondItem="qGl-1q-X7o" secondAttribute="leading" constant="16" id="bVs-zY-IMr"/>
+                            <constraint firstAttribute="trailing" secondItem="U2t-Jl-XIx" secondAttribute="trailing" constant="16" id="ev5-7g-ePv"/>
+                            <constraint firstAttribute="trailing" secondItem="cy9-HF-7sf" secondAttribute="trailing" constant="16" id="gxo-aC-9BJ"/>
+                            <constraint firstItem="cy9-HF-7sf" firstAttribute="leading" secondItem="qGl-1q-X7o" secondAttribute="leading" constant="16" id="ig8-qt-QZP"/>
+                            <constraint firstItem="U2t-Jl-XIx" firstAttribute="leading" secondItem="qGl-1q-X7o" secondAttribute="leading" constant="16" id="oCV-Pu-idz"/>
+                            <constraint firstAttribute="trailing" secondItem="hHQ-it-hOi" secondAttribute="trailing" constant="16" id="uIO-GE-oam"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="setUpTruckButton" destination="OOf-8n-3o9" id="o0b-8S-ARt"/>
                         <outlet property="truckConfirmPass" destination="hHQ-it-hOi" id="Dib-Wa-Y8z"/>
                         <outlet property="truckEmail" destination="U2t-Jl-XIx" id="bqL-MO-WEp"/>
                         <outlet property="truckPassword" destination="OQ2-WV-01h" id="LZX-qq-0Q7"/>
+                        <segue destination="mv8-Ar-CI5" kind="modal" identifier="SETUP_TRUCK" id="AAk-Uu-ijM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1J-Kn-71L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,7 +108,7 @@
         <!--LoginVC-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="RMLoginVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LOGIN_MAIN" id="vXZ-lx-hvc" customClass="RMLoginVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -93,15 +117,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Corner Kitchen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otv-ot-M9X">
-                                <rect key="frame" x="16" y="73" width="288" height="71"/>
-                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="37"/>
-                                <color key="textColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzd-yC-Dh0">
-                                <rect key="frame" x="16" y="330" width="288" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CKlogincopy" translatesAutoresizingMaskIntoConstraints="NO" id="oag-wh-mV4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzd-yC-Dh0">
+                                <rect key="frame" x="16" y="440" width="288" height="50"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="q25-lY-OV4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,9 +135,13 @@
                                     <action selector="onLoginPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rjQ-IY-XmO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LF-ko-iY0">
-                                <rect key="frame" x="16" y="391" width="288" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LF-ko-iY0">
+                                <rect key="frame" x="16" y="498" width="288" height="50"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SxN-uh-ua7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -132,7 +161,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vf-36-KTG">
-                                <rect key="frame" x="65" y="165" width="190" height="30"/>
+                                <rect key="frame" x="65" y="217" width="190" height="30"/>
                                 <state key="normal" title="I have a FoodTruck">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -141,8 +170,30 @@
                                     <segue destination="cMY-NQ-yeu" kind="modal" id="fmn-o1-56G"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Corner Kitchen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otv-ot-M9X">
+                                <rect key="frame" x="0.0" y="80" width="320" height="71"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="41"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oag-wh-mV4" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="5AV-Kd-Dnr"/>
+                            <constraint firstItem="1LF-ko-iY0" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="7SH-Oq-4cc"/>
+                            <constraint firstItem="wzd-yC-Dh0" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="9Ff-oz-R20"/>
+                            <constraint firstItem="1LF-ko-iY0" firstAttribute="top" secondItem="wzd-yC-Dh0" secondAttribute="bottom" constant="8" id="BJA-xx-Fr3"/>
+                            <constraint firstItem="1LF-ko-iY0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="C0s-ik-3va"/>
+                            <constraint firstItem="wzd-yC-Dh0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="GoP-cO-17V"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="1LF-ko-iY0" secondAttribute="bottom" constant="20" id="HDq-la-v8a"/>
+                            <constraint firstItem="oag-wh-mV4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="LWH-iB-FCk"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="oag-wh-mV4" secondAttribute="bottom" id="N0O-7C-JsH"/>
+                            <constraint firstAttribute="trailing" secondItem="otv-ot-M9X" secondAttribute="trailing" id="Oec-Ip-bp3"/>
+                            <constraint firstItem="otv-ot-M9X" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="a4G-QC-Z75"/>
+                            <constraint firstAttribute="trailing" secondItem="oag-wh-mV4" secondAttribute="trailing" id="cxU-vc-SPi"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="isPersonButton" destination="9A7-um-0O6" id="8mI-Ec-U6e"/>
@@ -182,17 +233,17 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0hP-CH-buH">
                                 <rect key="frame" x="16" y="112" width="288" height="30"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbX-Ov-fLg">
                                 <rect key="frame" x="16" y="150" width="288" height="30"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password again, ughh" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Chm-C3-nNj">
                                 <rect key="frame" x="16" y="188" width="288" height="30"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -217,11 +268,11 @@
                         <viewControllerLayoutGuide type="bottom" id="OcO-eq-Xn7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="12A-T9-LpW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGJ-dY-B1k">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -235,11 +286,12 @@
                     <navigationItem key="navigationItem" title="Corner Kitchen" id="TJw-f3-g3v"/>
                     <connections>
                         <outlet property="contentScroll" destination="XGJ-dY-B1k" id="cKX-Aq-QpB"/>
+                        <segue destination="mv8-Ar-CI5" kind="modal" identifier="EDIT_TRUCK_LOGGED" id="hIm-oS-lac"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slX-eZ-mqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567" y="596"/>
+            <point key="canvasLocation" x="1567" y="590"/>
         </scene>
         <!--Content EditVC-->
         <scene sceneID="cF6-ss-9qO">
@@ -271,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayK-dg-kOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2062" y="596"/>
+            <point key="canvasLocation" x="2072" y="590"/>
         </scene>
         <!--Corner Kitchen-->
         <scene sceneID="zLe-d9-z7U">
@@ -282,11 +334,11 @@
                         <viewControllerLayoutGuide type="bottom" id="jUb-7c-O43"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xa4-3s-2lz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gSS-h9-hky">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <connections>
                                     <outlet property="delegate" destination="Cpr-bh-ICq" id="KNz-IX-dgH"/>
                                 </connections>
@@ -333,11 +385,17 @@
             <objects>
                 <tabBarController id="nQ5-Ju-DXE" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="PQC-4s-TfX">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" translucent="NO" id="PQC-4s-TfX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="selectedImageTintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="DgH-u4-5lX" kind="relationship" relationship="viewControllers" id="PfT-qc-o0o"/>
@@ -486,9 +544,15 @@
             <point key="canvasLocation" x="1035" y="-682"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CKlogincopy" width="320" height="568"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="AAk-Uu-ijM"/>
+    </inferredMetricsTieBreakers>
 </document>

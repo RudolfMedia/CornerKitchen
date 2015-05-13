@@ -20,6 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.loginButton.layer.masksToBounds = YES;
+    self.loginButton.layer.cornerRadius = 5;
+
+    self.signUpButton.layer.masksToBounds = YES;
+    self.signUpButton.layer.cornerRadius = 5;
+
+
 
 
 
