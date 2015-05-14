@@ -47,7 +47,7 @@
 
     UITapGestureRecognizer *changeImage = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                   action:@selector(presentImagePicker)];
-    [self.editView.truckImageView addGestureRecognizer:changeImage];
+    [self.editView.imageContainer addGestureRecognizer:changeImage];
     
 }
 
@@ -65,10 +65,21 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    self.editView.truckImageView.image = chosenImage;
+    self.editView.editScrollView.delegate = self;
+    self.editView.editImageView.image = chosenImage;
+    self.editView.editScrollView.minimumZoomScale = self.editView.imageContainer.frame.size.width / chosenImage.size.width;
+    self.editView.editScrollView.zoomScale =  self.editView.editScrollView.minimumZoomScale;
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
 
+}
+
+
+#pragma mark - ScrollView Delegate
+
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+
+    return self.editView.editImageView;
 }
 
 #pragma mark - Selectors
@@ -113,7 +124,7 @@
 
 -(void)onSavePressed{
 
-    if (self.editView.truckImageView.image == nil) {
+    if (self.editView.editImageView.image == nil) {
 
         self.errorString = @"Show Us Your Truck! We Know You Worked Hard On It.";
         self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"

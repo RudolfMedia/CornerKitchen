@@ -13,7 +13,9 @@
 +(id)editForumInterface;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
-@property (weak, nonatomic) IBOutlet UIImageView *truckImageView;
+@property (weak, nonatomic) IBOutlet UIView *imageContainer;
+@property (weak, nonatomic) IBOutlet UIScrollView *editScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *editImageView;
 @property (weak, nonatomic) IBOutlet UITextField *truckName;
 @property (weak, nonatomic) IBOutlet UITextField *truckFoodType;
 @property (weak, nonatomic) IBOutlet UITextField *ownerName;

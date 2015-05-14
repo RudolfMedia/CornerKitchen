@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>11A06065-FE6C-4C1F-84CA-E10D4242023B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CornerKitchen</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2BD1A7CD342E33DBC604F600BCB71796D07E428A</key>
+		<string>https://github.com/RudolfMedia/CornerKitchen.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CornerKitchen.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2BD1A7CD342E33DBC604F600BCB71796D07E428A</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/RudolfMedia/CornerKitchen.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2BD1A7CD342E33DBC604F600BCB71796D07E428A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2BD1A7CD342E33DBC604F600BCB71796D07E428A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CornerKitchen</string>
+		</dict>
+	</array>
+</dict>
+</plist>
