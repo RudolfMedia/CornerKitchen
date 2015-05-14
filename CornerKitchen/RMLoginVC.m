@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 @property (weak, nonatomic) IBOutlet UIButton *isTruckButton;
 @property (weak, nonatomic) IBOutlet UIButton *isPersonButton;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
 
 @end
 
@@ -26,6 +28,19 @@
     self.signUpButton.layer.masksToBounds = YES;
     self.signUpButton.layer.cornerRadius = 5;
 
+    self.emailTextField.layer.borderWidth = 2;
+    self.emailTextField.layer.cornerRadius = 5;
+    self.emailTextField.layer.borderColor = [UIColor whiteColor].CGColor;
+    NSAttributedString *strEmail = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    self.emailTextField.attributedPlaceholder = strEmail;
+
+    self.passwordTextfield.layer.borderWidth = 2;
+    self.passwordTextfield.layer.cornerRadius = 5;
+    self.passwordTextfield.layer.borderColor = [UIColor whiteColor].CGColor;
+
+    NSAttributedString *strPass = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    self.passwordTextfield.attributedPlaceholder = strPass;
+
     self.isTruckButton.layer.masksToBounds = YES;
     self.isTruckButton.layer.cornerRadius = 5;
     [self.isTruckButton.layer setBorderWidth:2.0f];
@@ -38,6 +53,9 @@
 
     UITapGestureRecognizer *screenTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleLogin)];
     [self.view addGestureRecognizer:screenTap];
+
+    [self.emailTextField setHidden:YES];
+    [self.passwordTextfield setHidden:YES];
 
 }
 
@@ -53,6 +71,8 @@
     [self.loginButton setHidden:NO];
     [self.isPersonButton setHidden:YES];
     [self.isTruckButton setHidden:YES];
+    [self.emailTextField resignFirstResponder];
+    [self.passwordTextfield resignFirstResponder];
 }
 
 
@@ -60,7 +80,8 @@
 
 - (IBAction)onLoginPressed:(id)sender{
 
-
+    [self.emailTextField setHidden:NO];
+    [self.passwordTextfield setHidden:NO];
 
 }
 
@@ -70,6 +91,8 @@
     [self.isPersonButton setHidden:NO];
     [self.isTruckButton setHidden:NO];
     [self.loginButton setHidden:YES];
+    [self.emailTextField setHidden:YES];
+    [self.passwordTextfield setHidden:YES];
 
 }
 

@@ -24,6 +24,8 @@
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
+            <string>Quicksand-Regular</string>
+            <string>Quicksand-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -218,33 +220,55 @@
                                     <segue destination="cMY-NQ-yeu" kind="modal" id="fmn-o1-56G"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNy-5u-THB">
+                                <rect key="frame" x="16" y="171" width="288" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PCt-of-YRX">
+                                <rect key="frame" x="16" y="209" width="288" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9A7-um-0O6" firstAttribute="top" secondItem="3vf-36-KTG" secondAttribute="bottom" constant="8" id="2yn-er-W8O"/>
                             <constraint firstItem="oag-wh-mV4" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="5AV-Kd-Dnr"/>
                             <constraint firstItem="1LF-ko-iY0" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="7SH-Oq-4cc"/>
+                            <constraint firstItem="PCt-of-YRX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="94R-WP-9ts"/>
                             <constraint firstItem="wzd-yC-Dh0" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="9Ff-oz-R20"/>
                             <constraint firstItem="1LF-ko-iY0" firstAttribute="top" secondItem="wzd-yC-Dh0" secondAttribute="bottom" constant="8" id="BJA-xx-Fr3"/>
                             <constraint firstItem="1LF-ko-iY0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="C0s-ik-3va"/>
                             <constraint firstItem="1LF-ko-iY0" firstAttribute="top" secondItem="9A7-um-0O6" secondAttribute="bottom" constant="66" id="E6q-w8-fi2"/>
+                            <constraint firstAttribute="trailing" secondItem="PCt-of-YRX" secondAttribute="trailing" constant="16" id="ES3-qf-jFX"/>
                             <constraint firstItem="9A7-um-0O6" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="EeT-ea-in0"/>
                             <constraint firstItem="wzd-yC-Dh0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="GoP-cO-17V"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="1LF-ko-iY0" secondAttribute="bottom" constant="20" id="HDq-la-v8a"/>
                             <constraint firstItem="oag-wh-mV4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="LWH-iB-FCk"/>
+                            <constraint firstAttribute="trailing" secondItem="hNy-5u-THB" secondAttribute="trailing" constant="16" id="Mrm-XJ-f87"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="oag-wh-mV4" secondAttribute="bottom" id="N0O-7C-JsH"/>
                             <constraint firstAttribute="trailing" secondItem="otv-ot-M9X" secondAttribute="trailing" id="Oec-Ip-bp3"/>
                             <constraint firstItem="otv-ot-M9X" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="a4G-QC-Z75"/>
                             <constraint firstItem="9A7-um-0O6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="a93-so-SGe"/>
                             <constraint firstItem="3vf-36-KTG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bND-Da-AIR"/>
+                            <constraint firstItem="hNy-5u-THB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="cMz-4o-kVM"/>
                             <constraint firstAttribute="trailing" secondItem="oag-wh-mV4" secondAttribute="trailing" id="cxU-vc-SPi"/>
+                            <constraint firstItem="hNy-5u-THB" firstAttribute="top" secondItem="otv-ot-M9X" secondAttribute="bottom" constant="20" id="eC0-tW-cL8"/>
+                            <constraint firstItem="PCt-of-YRX" firstAttribute="top" secondItem="hNy-5u-THB" secondAttribute="bottom" constant="8" id="glc-IS-al5"/>
                             <constraint firstItem="3vf-36-KTG" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="vDh-5R-uGM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="hNy-5u-THB" id="dgJ-R4-vfd"/>
                         <outlet property="isPersonButton" destination="9A7-um-0O6" id="8mI-Ec-U6e"/>
                         <outlet property="isTruckButton" destination="3vf-36-KTG" id="NGQ-dp-xXC"/>
                         <outlet property="loginButton" destination="wzd-yC-Dh0" id="7Mi-kN-suL"/>
+                        <outlet property="passwordTextfield" destination="PCt-of-YRX" id="mPk-yA-QCU"/>
                         <outlet property="signUpButton" destination="1LF-ko-iY0" id="eed-DV-rry"/>
                     </connections>
                 </viewController>
