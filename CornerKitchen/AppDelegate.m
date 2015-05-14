@@ -31,16 +31,16 @@
 
        }];
 
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"Quicksand-Bold" size:14.0f], NSForegroundColorAttributeName : [UIColor whiteColor] }
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"Quicksand-Bold" size:14.0f], NSForegroundColorAttributeName : [UIColor colorWithRed:(230 /255.00) green:(230/255.00) blue:(230/255.00) alpha:1] }
                                              forState:UIControlStateNormal];
 
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:(35/255.00) green:(211/255.00) blue:(131/255.00) alpha:1] }
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor]}
                                              forState:UIControlStateSelected];
 
    CGRect screen =  [[UIScreen mainScreen] bounds];
 
 
-    [[UITabBar appearance] setSelectionIndicatorImage:[AppDelegate imageFromColor:[UIColor whiteColor]
+    [[UITabBar appearance] setSelectionIndicatorImage:[AppDelegate imageFromColor:[UIColor colorWithRed:(22/255.00) green:(188/255.00) blue:(129/255.00) alpha:1]
                                                                                    forSize:CGSizeMake(screen.size.width/2, 49)
                                                                                    withCornerRadius:0]];
 
