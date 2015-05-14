@@ -18,6 +18,7 @@
 @property RMTruck *createdTruck;
 @property NSString *errorString;
 @property UIAlertView *alert;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end
 
@@ -28,6 +29,32 @@
 
     UITapGestureRecognizer *screenTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     [self.view addGestureRecognizer:screenTap];
+
+    self.setUpTruckButton.layer.masksToBounds = YES;
+    self.setUpTruckButton.layer.cornerRadius = 5;
+
+    self.truckEmail.layer.borderWidth = 2;
+    self.truckEmail.layer.cornerRadius = 5;
+    self.truckEmail.layer.borderColor = [UIColor whiteColor].CGColor;
+    NSAttributedString *strEmail = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    self.truckEmail.attributedPlaceholder = strEmail;
+
+    self.truckPassword.layer.borderWidth = 2;
+    self.truckPassword.layer.cornerRadius = 5;
+    self.truckPassword.layer.borderColor = [UIColor whiteColor].CGColor;
+
+    NSAttributedString *strPass = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    self.truckPassword.attributedPlaceholder = strPass;
+
+    self.truckConfirmPass.layer.borderWidth = 2;
+    self.truckConfirmPass.layer.cornerRadius = 5;
+    self.truckConfirmPass.layer.borderColor = [UIColor whiteColor].CGColor;
+
+    NSAttributedString *strConfirm = [[NSAttributedString alloc] initWithString:@"Confirm Password" attributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    self.truckConfirmPass.attributedPlaceholder = strConfirm;
+
+    self.cancelButton.layer.masksToBounds = YES;
+    self.cancelButton.layer.cornerRadius = 5;
 
 }
 
@@ -107,5 +134,14 @@
 
 }
 
+- (IBAction)onCancelPressed:(id)sender {
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RMContentEditVC *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LOGIN_MAIN"];
+
+    [self presentViewController:loginVC animated:YES completion:^{
+
+    }];
+}
 
 @end

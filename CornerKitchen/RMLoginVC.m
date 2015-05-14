@@ -26,10 +26,18 @@
     self.signUpButton.layer.masksToBounds = YES;
     self.signUpButton.layer.cornerRadius = 5;
 
+    self.isTruckButton.layer.masksToBounds = YES;
+    self.isTruckButton.layer.cornerRadius = 5;
+    [self.isTruckButton.layer setBorderWidth:2.0f];
+    [self.isTruckButton.layer setBorderColor:[UIColor whiteColor].CGColor];
 
+    self.isPersonButton.layer.masksToBounds = YES;
+    self.isPersonButton.layer.cornerRadius = 5;
+    [self.isPersonButton.layer setBorderWidth:2.0f];
+    [self.isPersonButton.layer setBorderColor:[UIColor whiteColor].CGColor];
 
-
-
+    UITapGestureRecognizer *screenTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleLogin)];
+    [self.view addGestureRecognizer:screenTap];
 
 }
 
@@ -38,6 +46,13 @@
     [self.isPersonButton setHidden:YES];
     [self.isTruckButton setHidden:YES];
     
+}
+
+-(void)toggleLogin{
+
+    [self.loginButton setHidden:NO];
+    [self.isPersonButton setHidden:YES];
+    [self.isTruckButton setHidden:YES];
 }
 
 
@@ -54,6 +69,7 @@
 
     [self.isPersonButton setHidden:NO];
     [self.isTruckButton setHidden:NO];
+    [self.loginButton setHidden:YES];
 
 }
 
