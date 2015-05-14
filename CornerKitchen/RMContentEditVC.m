@@ -9,7 +9,7 @@
 #import "RMContentEditVC.h"
 #import "RMTruckEditView.h"
 
-@interface RMContentEditVC ()<UIScrollViewDelegate, UIImagePickerControllerDelegate>
+@interface RMContentEditVC ()<UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScroll;
 @property RMTruckEditView *editView;
@@ -40,9 +40,15 @@
 
     [self fillOutDetails:self.currentTruck];
 
+    UITapGestureRecognizer *hideKeyboard = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                action:@selector(hidekeyboards)];
+    [self.view addGestureRecognizer:hideKeyboard];
+
+
     UITapGestureRecognizer *changeImage = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                   action:@selector(presentImagePicker)];
     [self.editView.truckImageView addGestureRecognizer:changeImage];
+    
 }
 
 #pragma mark - View formatting
@@ -52,6 +58,17 @@
     viewToRound.layer.masksToBounds = YES;
     viewToRound.layer.cornerRadius = 5;
     return viewToRound;
+}
+
+#pragma mark - ImageDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.editView.truckImageView.image = chosenImage;
+
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+
 }
 
 #pragma mark - Selectors
@@ -165,6 +182,15 @@
 
 
 
+
+}
+
+- (void)hidekeyboards{
+
+    [self.editView.truckName resignFirstResponder];
+    [self.editView.truckFoodType resignFirstResponder];
+    [self.editView.ownerName resignFirstResponder];
+    [self.editView.truckLogin resignFirstResponder];
 
 }
 
