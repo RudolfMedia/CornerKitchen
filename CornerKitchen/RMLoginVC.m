@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *isPersonButton;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
+@property NSString *errorString;
+@property UIAlertView *alert;
 
 @end
 
@@ -80,8 +82,43 @@
 
 - (IBAction)onLoginPressed:(id)sender{
 
+    if (self.emailTextField.isHidden == NO) {
+
+        if (self.emailTextField.text.length < 5) {
+
+            self.errorString = @"Please Enter a Valid Email";
+            self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                    message:self.errorString
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+            [self.alert show];
+
+        }
+        else if (self.passwordTextfield.text.length <5){
+
+            self.errorString = @"Please Enter a Valid Password";
+            self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                    message:self.errorString
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+            [self.alert show];
+
+        }
+
+        else{
+
+
+
+        }
+
+
+    }
+
     [self.emailTextField setHidden:NO];
     [self.passwordTextfield setHidden:NO];
+
 
 }
 
