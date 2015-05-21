@@ -21,7 +21,7 @@
                 typeOfFood:(NSString *)typeOfFood
                  ownerName:(NSString *)ownerName
                      image:(PFFile *)imageFile
-                completion:(void (^)(NSError *error))completionBlock;
+                completion:(void (^)(NSError *error))onComplete;
 
 
 

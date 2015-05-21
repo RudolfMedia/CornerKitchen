@@ -16,7 +16,7 @@
                typeOfFood:(NSString *)typeOfFood
                 ownerName:(NSString *)ownerName
                     image:(PFFile *)imageFile
-               completion:(void (^)(NSError *error))completionBlock{
+               completion:(void (^)(NSError *error))onComplete{
 
     NSString *noSpace = [username stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 
@@ -37,12 +37,11 @@
 
             [newTruck saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
-                    completionBlock(nil);
+                    onComplete(nil);
                 }
 
                 else {
-                    completionBlock(error);
-
+                    onComplete(error);
                 }
 
             }];
@@ -50,8 +49,7 @@
         }
 
         else {
-
-            completionBlock(error);
+            onComplete(error);
             //NSString *errorString = [error userInfo][@"error"];
         }
 

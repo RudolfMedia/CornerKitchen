@@ -8,11 +8,13 @@
 
 #import "RMContentEditVC.h"
 #import "RMTruckEditView.h"
-
+#import "RMDataLoader.h"
 @interface RMContentEditVC ()<UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScroll;
 @property RMTruckEditView *editView;
+@property RMDataLoader *dataLoader;
+@property PFFile *truckImageFile;
 @property NSString *errorString;
 @property UIAlertView *alert;
 
@@ -30,7 +32,6 @@
     [self.editView.saveIndicator setHidden:YES];
 
     self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.editView.frame.size.height);
-
     self.contentScroll.decelerationRate = UIScrollViewDecelerationRateFast;
     [self.contentScroll addSubview:self.editView];
 
@@ -38,11 +39,10 @@
     [self roundViewCorners:self.editView.cancelButton];
 
     [self applySelectors];
-
     [self fillOutDetails:self.currentTruck];
 
     UITapGestureRecognizer *hideKeyboard = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                action:@selector(hidekeyboards)];
+                                                                                   action:@selector(hidekeyboards)];
     [self.view addGestureRecognizer:hideKeyboard];
 
 
@@ -187,105 +187,47 @@
 
     else{
 
-        if ([PFUser currentUser]) {
 
-
-        }
-
-        else{
+        self.dataLoader = [[RMDataLoader alloc] init];
 
         [self.editView.saveButton setHidden:YES];
         [self.editView.cancelButton setHidden:YES];
         [self.editView.saveIndicator startAnimating];
         [self.editView.saveIndicator setHidden:NO];
 
-        PFUser *newUser = [PFUser user];
-        newUser.username = [self.editView.truckLogin.text lowercaseString];
-        newUser.password = self.currentTruck.password;
-        newUser[@"isTruck"] = [NSNumber numberWithBool:YES];
-
-        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [self.dataLoader createNewTruckUser:self.currentTruck.email password:self.currentTruck.password truckName:self.editView.truckName.text typeOfFood:self.editView.truckFoodType.text ownerName:self.editView.ownerName.text image:self.truckImageFile completion:^(NSError *error) {
 
             if (!error) {
-
-                PFObject *truck = [PFObject objectWithClassName:@"Truck"];
-                truck[@"name"] = self.editView.truckName.text;
-                truck[@"ownerName"] = self.editView.ownerName.text;
-                truck[@"foodType"] = self.editView.truckFoodType.text;
-                truck[@"user"] = [PFUser currentUser];
-
-                [truck saveInBackgroundWithBlock:^(BOOL suceeded, NSError *error){
-
-                    if (!error) {
-                        
-                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                        UITabBarController *truckMain = [storyboard instantiateViewControllerWithIdentifier:@"TRUCK_MAIN"];
-
-                        [self presentViewController:truckMain animated:YES completion:^{
-
-
-
-                        }];
-
-                    }
-
-                    else{
-
-                        [self.editView.saveButton setHidden:NO];
-                        [self.editView.cancelButton setHidden:NO];
-                        [self.editView.saveIndicator stopAnimating];
-                        [self.editView.saveIndicator setHidden:YES];
-
-                        self.errorString = @"Something Went Wrong, Please Try Again";
-                        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                                message:self.errorString
-                                                               delegate:self
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                        [self.alert show];
-                    }
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UITabBarController *truckMain = [storyboard instantiateViewControllerWithIdentifier:@"TRUCK_MAIN"];
+                [self presentViewController:truckMain animated:YES completion:^{
 
                 }];
 
             }
-
-
-            else {
+            else{
 
                 [self.editView.saveButton setHidden:NO];
                 [self.editView.cancelButton setHidden:NO];
                 [self.editView.saveIndicator stopAnimating];
                 [self.editView.saveIndicator setHidden:YES];
 
-                NSString *errorString = [error userInfo][@"error"];
-
                 self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                        message:errorString
+                                                        message:error.description
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
                 [self.alert show];
 
             }
+
         }];
 
-
     }
-
-    }
-
-
 
 }
 
-- (void)hidekeyboards{
 
-    [self.editView.truckName resignFirstResponder];
-    [self.editView.truckFoodType resignFirstResponder];
-    [self.editView.ownerName resignFirstResponder];
-    [self.editView.truckLogin resignFirstResponder];
-
-}
 
 #pragma mark - content Population
 
@@ -298,6 +240,14 @@
 
 #pragma mark - KeyBoard Delegate
 
+- (void)hidekeyboards{
+
+    [self.editView.truckName resignFirstResponder];
+    [self.editView.truckFoodType resignFirstResponder];
+    [self.editView.ownerName resignFirstResponder];
+    [self.editView.truckLogin resignFirstResponder];
+    
+}
 
 -(void)keyboardWillShow {
     if (self.view.frame.origin.y >= 0)
