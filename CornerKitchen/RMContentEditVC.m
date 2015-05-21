@@ -16,6 +16,7 @@
 @property NSString *errorString;
 @property UIAlertView *alert;
 
+#define kOFFSET_FOR_KEYBOARD 80.0
 
 @end
 
@@ -26,7 +27,7 @@
 
     self.editView = [RMTruckEditView editForumInterface];
     self.contentScroll.delegate = self;
-
+    [self.editView.saveIndicator setHidden:YES];
 
     self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.editView.frame.size.height);
 
@@ -186,11 +187,92 @@
 
     else{
 
-        //setupprofile
+        if ([PFUser currentUser]) {
+
+
+        }
+
+        else{
+
+        [self.editView.saveButton setHidden:YES];
+        [self.editView.cancelButton setHidden:YES];
+        [self.editView.saveIndicator startAnimating];
+        [self.editView.saveIndicator setHidden:NO];
+
+        PFUser *newUser = [PFUser user];
+        newUser.username = [self.editView.truckLogin.text lowercaseString];
+        newUser.password = self.currentTruck.password;
+        newUser[@"isTruck"] = [NSNumber numberWithBool:YES];
+
+        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+            if (!error) {
+
+                PFObject *truck = [PFObject objectWithClassName:@"Truck"];
+                truck[@"name"] = self.editView.truckName.text;
+                truck[@"ownerName"] = self.editView.ownerName.text;
+                truck[@"foodType"] = self.editView.truckFoodType.text;
+                truck[@"user"] = [PFUser currentUser];
+
+                [truck saveInBackgroundWithBlock:^(BOOL suceeded, NSError *error){
+
+                    if (!error) {
+                        
+                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                        UITabBarController *truckMain = [storyboard instantiateViewControllerWithIdentifier:@"TRUCK_MAIN"];
+
+                        [self presentViewController:truckMain animated:YES completion:^{
+
+
+
+                        }];
+
+                    }
+
+                    else{
+
+                        [self.editView.saveButton setHidden:NO];
+                        [self.editView.cancelButton setHidden:NO];
+                        [self.editView.saveIndicator stopAnimating];
+                        [self.editView.saveIndicator setHidden:YES];
+
+                        self.errorString = @"Something Went Wrong, Please Try Again";
+                        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                                message:self.errorString
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                        [self.alert show];
+                    }
+
+                }];
+
+            }
+
+
+            else {
+
+                [self.editView.saveButton setHidden:NO];
+                [self.editView.cancelButton setHidden:NO];
+                [self.editView.saveIndicator stopAnimating];
+                [self.editView.saveIndicator setHidden:YES];
+
+                NSString *errorString = [error userInfo][@"error"];
+
+                self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                        message:errorString
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+                [self.alert show];
+
+            }
+        }];
+
 
     }
 
-
+    }
 
 
 
@@ -214,8 +296,89 @@
 
 }
 
+#pragma mark - KeyBoard Delegate
 
 
+-(void)keyboardWillShow {
+    if (self.view.frame.origin.y >= 0)
+    {
+        [self setViewMovedUp:YES];
+    }
+    else if (self.view.frame.origin.y < 0)
+    {
+        [self setViewMovedUp:NO];
+    }
+}
+
+-(void)keyboardWillHide {
+    if (self.view.frame.origin.y >= 0)
+    {
+        [self setViewMovedUp:YES];
+    }
+    else if (self.view.frame.origin.y < 0)
+    {
+        [self setViewMovedUp:NO];
+    }
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)sender
+{
+    if ([sender isEqual:self.editView.truckLogin])
+    {
+        if  (self.view.frame.origin.y >= 0)
+        {
+            [self setViewMovedUp:YES];
+        }
+    }
+}
+
+-(void)setViewMovedUp:(BOOL)movedUp
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+
+    CGRect rect = self.view.frame;
+    if (movedUp)
+    {
+               rect.origin.y -= kOFFSET_FOR_KEYBOARD;
+        rect.size.height += kOFFSET_FOR_KEYBOARD;
+    }
+    else
+    {
+        rect.origin.y += kOFFSET_FOR_KEYBOARD;
+        rect.size.height -= kOFFSET_FOR_KEYBOARD;
+    }
+    self.view.frame = rect;
+
+    [UIView commitAnimations];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
+}
 
 
 

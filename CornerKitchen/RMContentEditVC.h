@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RMTruck.h"
+#import <Parse/Parse.h>
 
 @interface RMContentEditVC : UIViewController
 

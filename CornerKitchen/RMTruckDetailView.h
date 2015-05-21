@@ -12,7 +12,12 @@
 
 + (id)truckDetailCustomView;
 @property (weak, nonatomic) IBOutlet UIView *menutView;
+@property (weak, nonatomic) IBOutlet UIView *scrollContainerView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 @property (weak, nonatomic) IBOutlet UIButton *editProfileButton;
+@property (weak, nonatomic) IBOutlet UIImageView *truckImage;
+@property (weak, nonatomic) IBOutlet UILabel *truckName;
+@property (weak, nonatomic) IBOutlet UILabel *foodType;
 
 @end

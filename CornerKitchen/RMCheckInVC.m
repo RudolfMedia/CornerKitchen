@@ -86,6 +86,7 @@
                          
                      }];
 
+
 }
 
 -(void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
@@ -97,9 +98,9 @@
                      }
                      completion:^(BOOL finished) {
 
-                         NSLog(@"FINISHED");
 
                      }];
+
 }
 
 

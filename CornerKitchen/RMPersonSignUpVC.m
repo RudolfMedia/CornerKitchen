@@ -96,6 +96,30 @@
 
     else{
 
+        PFUser *newUser = [PFUser user];
+        newUser.username = [self.personEmail.text lowercaseString];\
+        newUser.password = self.personPassword.text;
+        newUser[@"isTruck"] = [NSNumber numberWithBool:NO];
+
+        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+
+                
+                
+
+            }
+
+            else {
+                NSString *errorString = [error userInfo][@"error"];
+                self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                        message:errorString
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+                [self.alert show];
+            }
+
+        }];
 
         
     }

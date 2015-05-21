@@ -40,7 +40,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Type of Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGT-df-GV3">
                             <rect key="frame" x="16" y="255" width="288" height="21"/>
                             <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nsJ-CJ-VvL">
@@ -78,6 +78,10 @@
                                 <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DmZ-gs-Jcg">
+                            <rect key="frame" x="142" y="86" width="37" height="37"/>
+                            <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -105,9 +109,14 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="activityIndicator" destination="DmZ-gs-Jcg" id="jy3-rk-4oa"/>
                 <outlet property="editProfileButton" destination="cpc-tC-TKc" id="HhP-qf-zl6"/>
+                <outlet property="foodType" destination="vGT-df-GV3" id="0AK-vi-CtF"/>
                 <outlet property="menuTableView" destination="5sV-CA-xBf" id="pcj-fv-yOQ"/>
                 <outlet property="menutView" destination="nsJ-CJ-VvL" id="hGw-lb-bln"/>
+                <outlet property="scrollContainerView" destination="u5f-I8-EUG" id="oR5-kF-O4F"/>
+                <outlet property="truckImage" destination="57x-Sf-6jN" id="mMI-Lk-iqM"/>
+                <outlet property="truckName" destination="pQk-aF-8Um" id="pQl-o3-pqQ"/>
             </connections>
             <point key="canvasLocation" x="91" y="490"/>
         </view>

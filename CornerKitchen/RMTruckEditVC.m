@@ -9,6 +9,7 @@
 #import "RMTruckEditVC.h"
 #import "RMTruckDetailView.h"
 #import "RMContentEditVC.h"
+#import "RMTruck.h"
 
 @interface RMTruckEditVC ()<UIScrollViewDelegate>
 
@@ -27,6 +28,9 @@
     self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.detailView.frame.size.height);
     self.contentScroll.decelerationRate = UIScrollViewDecelerationRateFast;
 
+    [self.detailView.activityIndicator stopAnimating];
+    [self.detailView.activityIndicator setHidden:YES];
+
     [self roundViewCorners:self.detailView.menuTableView];
     [self roundViewCorners:self.detailView.menutView];
     [self roundViewCorners:self.detailView.editProfileButton];
@@ -34,6 +38,7 @@
 
     [self.contentScroll addSubview:self.detailView];
     [self applySelectors];
+    [self populateView];
 
 
 }
@@ -46,6 +51,7 @@
     viewToRound.layer.masksToBounds = YES;
     viewToRound.layer.cornerRadius = 5;
     return viewToRound;
+
 }
 
 #pragma mark - Selectors
@@ -65,6 +71,37 @@
 
     [self presentViewController:editVC animated:YES completion:^{
 
+    }];
+
+}
+
+- (void)populateView{
+
+    [self.detailView.activityIndicator startAnimating];
+    [self.detailView.activityIndicator setHidden:NO];
+
+    PFQuery *query = [PFQuery queryWithClassName:@"Truck"];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+
+        if (!error) {
+
+            [self.detailView.activityIndicator stopAnimating];
+            [self.detailView.activityIndicator setHidden:YES];
+
+            PFObject *currentTruck = [objects firstObject];
+            self.detailView.truckName.text = currentTruck[@"name"];
+            self.detailView.foodType.text = currentTruck[@"foodType"];
+
+        }
+
+        else {
+
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            [self.detailView.activityIndicator stopAnimating];
+            [self.detailView.activityIndicator setHidden:YES];
+
+        }
     }];
 
 }

@@ -16,6 +16,7 @@
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
+            <string>Quicksand-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -30,12 +31,12 @@
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type of Food" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CfW-Q1-WBX">
                             <rect key="frame" x="16" y="309" width="288" height="30"/>
-                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Truck Name" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="NcD-gO-2Ya">
                             <rect key="frame" x="16" y="271" width="288" height="30"/>
-                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Truck" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sa7-qA-kfH">
@@ -52,12 +53,12 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WQ8-rn-9uz">
                             <rect key="frame" x="16" y="400" width="288" height="30"/>
-                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AGa-B3-Mn7">
                             <rect key="frame" x="16" y="438" width="288" height="30"/>
-                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nF-px-BsD">
@@ -93,6 +94,13 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iz0-2H-KCl">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Drag To Reposition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phT-EU-SET">
+                                            <rect key="frame" x="21" y="84" width="278" height="42"/>
+                                            <color key="backgroundColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="22"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Iz0-2H-KCl" secondAttribute="bottom" id="N2x-yr-qeR"/>
@@ -106,11 +114,16 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="PlI-1t-vAE" secondAttribute="height" multiplier="32:21" id="1Vz-pA-K2z"/>
                                 <constraint firstAttribute="trailing" secondItem="Lrk-ee-Kxa" secondAttribute="trailing" id="1yw-wb-lHh"/>
+                                <constraint firstAttribute="centerX" secondItem="phT-EU-SET" secondAttribute="centerX" id="CHl-Ny-tRh"/>
+                                <constraint firstAttribute="centerY" secondItem="phT-EU-SET" secondAttribute="centerY" id="M0w-lF-vwL"/>
                                 <constraint firstItem="Lrk-ee-Kxa" firstAttribute="top" secondItem="PlI-1t-vAE" secondAttribute="top" id="SlM-eS-zHy"/>
                                 <constraint firstItem="Lrk-ee-Kxa" firstAttribute="leading" secondItem="PlI-1t-vAE" secondAttribute="leading" id="Wnt-Y7-7h8"/>
                                 <constraint firstAttribute="bottom" secondItem="Lrk-ee-Kxa" secondAttribute="bottom" id="jl0-Q0-Cty"/>
                             </constraints>
                         </view>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UZW-6B-r0r">
+                            <rect key="frame" x="142" y="558" width="37" height="37"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" red="0.1019607843" green="0.84705882349999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -129,6 +142,7 @@
                         <constraint firstItem="2nF-px-BsD" firstAttribute="leading" secondItem="YM9-9a-H06" secondAttribute="leading" constant="16" id="V6c-nh-b8o"/>
                         <constraint firstItem="WQ8-rn-9uz" firstAttribute="leading" secondItem="YM9-9a-H06" secondAttribute="leading" constant="16" id="VkN-WI-4R0"/>
                         <constraint firstItem="sa7-qA-kfH" firstAttribute="top" secondItem="PlI-1t-vAE" secondAttribute="bottom" constant="30" id="axg-St-1fB"/>
+                        <constraint firstAttribute="centerX" secondItem="UZW-6B-r0r" secondAttribute="centerX" id="cIX-qB-YFi"/>
                         <constraint firstAttribute="trailing" secondItem="AGa-B3-Mn7" secondAttribute="trailing" constant="16" id="iJ4-DM-dxW"/>
                         <constraint firstItem="AGa-B3-Mn7" firstAttribute="leading" secondItem="YM9-9a-H06" secondAttribute="leading" constant="16" id="kKc-4P-5pv"/>
                         <constraint firstAttribute="trailing" secondItem="2nF-px-BsD" secondAttribute="trailing" constant="16" id="kY3-av-0yE"/>
@@ -154,7 +168,9 @@
                 <outlet property="editScrollView" destination="Lrk-ee-Kxa" id="luT-b0-0fE"/>
                 <outlet property="imageContainer" destination="PlI-1t-vAE" id="tY8-na-j2o"/>
                 <outlet property="ownerName" destination="WQ8-rn-9uz" id="dM7-wL-Ecp"/>
+                <outlet property="positionLabel" destination="phT-EU-SET" id="CIR-FC-717"/>
                 <outlet property="saveButton" destination="hoA-et-1IC" id="f78-pd-k3r"/>
+                <outlet property="saveIndicator" destination="UZW-6B-r0r" id="zTm-JH-UiR"/>
                 <outlet property="truckFoodType" destination="CfW-Q1-WBX" id="rr9-h3-NCM"/>
                 <outlet property="truckLogin" destination="AGa-B3-Mn7" id="6mZ-EX-Qwa"/>
                 <outlet property="truckName" destination="NcD-gO-2Ya" id="OIX-ZO-YYs"/>

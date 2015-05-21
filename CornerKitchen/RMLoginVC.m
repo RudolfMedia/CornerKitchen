@@ -7,6 +7,7 @@
 //
 
 #import "RMLoginVC.h"
+#import "RMCheckInVC.h"
 
 @interface RMLoginVC ()
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -75,6 +76,7 @@
     [self.isTruckButton setHidden:YES];
     [self.emailTextField resignFirstResponder];
     [self.passwordTextfield resignFirstResponder];
+    
 }
 
 
@@ -109,11 +111,35 @@
 
         else{
 
+            [PFUser logInWithUsernameInBackground:[self.emailTextField.text lowercaseString]
+                                         password:self.passwordTextfield.text
+                                            block:^(PFUser *user, NSError *error) {
+                                                if (user) {
+
+
+                                                    if ([user[@"isTruck"] isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+
+                                                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                        UITabBarController *truckMain = [storyboard instantiateViewControllerWithIdentifier:@"TRUCK_MAIN"];
+
+                                                        [self presentViewController:truckMain animated:YES completion:^{
+
+
+                                                        }];
+
+                                                    }
+
+                                                }
+                                                else{
+
+                                                }
+
+
+
+            }];
 
 
         }
-
-
     }
 
     [self.emailTextField setHidden:NO];

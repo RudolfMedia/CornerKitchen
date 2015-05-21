@@ -7,7 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface RMDataLoader : NSObject
+
+//create new truck user
+//create new regular user
+//login
+
+- (void)createNewTruckUser:(NSString *)username
+                  password:(NSString *)password
+                 truckName:(NSString *)truckName
+                typeOfFood:(NSString *)typeOfFood
+                 ownerName:(NSString *)ownerName
+                     image:(PFFile *)imageFile
+                completion:(void (^)(NSError *error))completionBlock;
+
+
 
 @end
