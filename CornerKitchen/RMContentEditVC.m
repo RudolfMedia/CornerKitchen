@@ -187,17 +187,23 @@
 
     else{
 
-
         self.dataLoader = [[RMDataLoader alloc] init];
+        self.truckImageFile = [[PFFile alloc] init];
 
         [self.editView.saveButton setHidden:YES];
         [self.editView.cancelButton setHidden:YES];
         [self.editView.saveIndicator startAnimating];
         [self.editView.saveIndicator setHidden:NO];
-
-        [self.dataLoader createNewTruckUser:self.currentTruck.email password:self.currentTruck.password truckName:self.editView.truckName.text typeOfFood:self.editView.truckFoodType.text ownerName:self.editView.ownerName.text image:self.truckImageFile completion:^(NSError *error) {
+        [self.dataLoader createNewTruckUser:self.currentTruck.email
+                                   password:self.currentTruck.password
+                                  truckName:self.editView.truckName.text
+                                 typeOfFood:self.editView.truckFoodType.text
+                                  ownerName:self.editView.ownerName.text
+                                      image:self.editView.editImageView.image
+                                 completion:^(NSError *error) {
 
             if (!error) {
+                
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 UITabBarController *truckMain = [storyboard instantiateViewControllerWithIdentifier:@"TRUCK_MAIN"];
                 [self presentViewController:truckMain animated:YES completion:^{
@@ -211,9 +217,10 @@
                 [self.editView.cancelButton setHidden:NO];
                 [self.editView.saveIndicator stopAnimating];
                 [self.editView.saveIndicator setHidden:YES];
+                NSString *errorString = [error userInfo][@"error"];
 
                 self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                        message:error.description
+                                                        message:errorString
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

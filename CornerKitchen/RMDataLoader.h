@@ -20,7 +20,7 @@
                  truckName:(NSString *)truckName
                 typeOfFood:(NSString *)typeOfFood
                  ownerName:(NSString *)ownerName
-                     image:(PFFile *)imageFile
+                     image:(UIImage *)imageFile
                 completion:(void (^)(NSError *error))onComplete;
 
 

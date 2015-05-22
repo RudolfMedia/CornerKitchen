@@ -15,7 +15,7 @@
                 truckName:(NSString *)truckName
                typeOfFood:(NSString *)typeOfFood
                 ownerName:(NSString *)ownerName
-                    image:(PFFile *)imageFile
+                    image:(UIImage *)imageFile
                completion:(void (^)(NSError *error))onComplete{
 
     NSString *noSpace = [username stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -32,12 +32,36 @@
             newTruck[@"user"] = newUser;
             newTruck[@"name"] = truckName;
             newTruck[@"foodType"] = typeOfFood;
-            newTruck[@"profileImage"] = imageFile;
             newTruck[@"ownerName"] = ownerName;
 
             [newTruck saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
-                    onComplete(nil);
+
+                    NSData *raw = UIImagePNGRepresentation(imageFile);
+                    PFFile *file = [PFFile fileWithName:@"truckImage.png" data:raw];
+                    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+                        if (succeeded) {
+
+                            newTruck[@"profileImage"] = file;
+                            [newTruck saveInBackgroundWithBlock:^(BOOL succeded, NSError *error){
+
+                                if (succeeded) {
+                                    onComplete(nil);
+                                }
+                                else{
+                                    onComplete(error);
+                                }
+
+                            }];
+
+                        }
+
+                        else{
+                            onComplete(error);
+                        }
+
+                    }];
+
                 }
 
                 else {
@@ -50,11 +74,13 @@
 
         else {
             onComplete(error);
-            //NSString *errorString = [error userInfo][@"error"];
         }
 
     }];
 
 }
+
+
+
 
 @end
