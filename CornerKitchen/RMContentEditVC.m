@@ -17,7 +17,7 @@
 @property PFFile *truckImageFile;
 @property NSString *errorString;
 @property UIAlertView *alert;
-
+@property BOOL edited;
 #define kOFFSET_FOR_KEYBOARD 80.0
 
 @end
@@ -37,6 +37,7 @@
 
     [self roundViewCorners:self.editView.saveButton];
     [self roundViewCorners:self.editView.cancelButton];
+    [self roundViewCorners:self.editView.positionButton];
 
     [self applySelectors];
     [self fillOutDetails:self.currentTruck];
@@ -49,7 +50,9 @@
     UITapGestureRecognizer *changeImage = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                   action:@selector(presentImagePicker)];
     [self.editView.imageContainer addGestureRecognizer:changeImage];
-    
+
+
+    [self.editView.positionButton setHidden:YES];
 }
 
 #pragma mark - View formatting
@@ -66,12 +69,17 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    [picker.navigationBar setTintColor:[UIColor greenColor]];
     self.editView.editScrollView.delegate = self;
     self.editView.editImageView.image = chosenImage;
     self.editView.editScrollView.minimumZoomScale = self.editView.imageContainer.frame.size.width / chosenImage.size.width;
     self.editView.editScrollView.zoomScale =  self.editView.editScrollView.minimumZoomScale;
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
+
+    [self.editView.positionButton setHidden:NO];
+    self.contentScroll.scrollEnabled = NO;
+    self.editView.editScrollView.scrollEnabled = YES;
 
 }
 
@@ -81,6 +89,14 @@
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
 
     return self.editView.editImageView;
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+    if (scrollView == self.editView.editScrollView) {
+        [self.editView.positionButton setTitle:@"Set Picture" forState:UIControlStateNormal];
+        self.edited = YES;
+    }
 }
 
 #pragma mark - Selectors
@@ -94,8 +110,23 @@
     [self.editView.saveButton addTarget:self
                                  action:@selector(onSavePressed)
                        forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.editView.positionButton addTarget:self
+                                     action:@selector(editDone)
+                           forControlEvents:UIControlEventTouchUpInside];
 
 }
+- (void)editDone{
+
+    if (self.edited == YES) {
+        
+        [self.editView.positionButton setHidden:YES];
+        self.editView.editScrollView.scrollEnabled = NO;
+        self.contentScroll.scrollEnabled = YES;
+    }
+
+}
+
 
 - (void)presentImagePicker{
 
@@ -106,7 +137,6 @@
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 
     [self presentViewController:picker animated:YES completion:NULL];
-
 
 
 }
@@ -125,7 +155,7 @@
 
 -(void)onSavePressed{
 
-    if (self.editView.editImageView.image == nil) {
+    if ([self.editView.editImageView image] == nil) {
 
         self.errorString = @"Show Us Your Truck! We Know You Worked Hard On It.";
         self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
@@ -310,6 +340,8 @@
     [UIView commitAnimations];
 }
 
+#pragma mark - NavigationBarDelegate
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -336,16 +368,6 @@
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

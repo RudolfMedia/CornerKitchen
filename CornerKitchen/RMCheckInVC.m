@@ -8,14 +8,16 @@
 
 #import "RMCheckInVC.h"
 #import "AppDelegate.h"
+#import "RMViewAnimator.h"
 
 @interface RMCheckInVC ()<MKMapViewDelegate, CLLocationManagerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet MKMapView *checkinMapView;
-@property CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UIButton *checkinButton;
+@property RMViewAnimator *animator;
 @property CLLocationCoordinate2D checkinLocationCoordinate;
+@property CLLocationManager *locationManager;
 
 @end
 
@@ -30,6 +32,8 @@
 
     self.checkinButton.layer.masksToBounds = YES;
     self.checkinButton.layer.cornerRadius = 5;
+
+    self.animator = [[RMViewAnimator alloc] init];
 
 
 }
@@ -76,31 +80,13 @@
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
 
-    self.checkinButton.alpha = 0;
-    [UIView animateWithDuration:.2
-                     animations:^{
-
-                         self.checkinButton.alpha = 1;
-                     }
-                     completion:^(BOOL finished) {
-                         
-                     }];
-
+    [self.animator alphaInView:self.checkinButton];
 
 }
 
 -(void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
 
-    self.checkinButton.alpha = 1;
-    [UIView animateWithDuration:.2
-                     animations:^{
-                         self.checkinButton.alpha = 0;
-                     }
-                     completion:^(BOOL finished) {
-
-
-                     }];
-
+    [self.animator alphaOutView:self.checkinButton];
 }
 
 
@@ -108,8 +94,6 @@
 
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 500, 500);
     [self.checkinMapView setRegion:region animated:NO];
-
-
 
 }
 

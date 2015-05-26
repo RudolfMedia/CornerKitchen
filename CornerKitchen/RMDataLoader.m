@@ -80,6 +80,30 @@
 
 }
 
+- (void)createNewRegularUser:(NSString *)username
+                    password:(NSString *)password
+                  onComplete:(void (^)(NSError *error))callback{
+
+    PFUser *newUser = [PFUser user];
+    newUser.username = username;
+    newUser.password = password;
+    newUser[@"isTruck"] = [NSNumber numberWithBool:NO];
+
+    [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            callback(nil);
+        }
+
+        else {
+            callback(error);
+        }
+
+    }];
+
+
+}
+
+
 
 
 

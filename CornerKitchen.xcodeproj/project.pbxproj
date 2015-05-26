@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260F6BE71B10C84E00ED37FB /* RMViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 260F6BE61B10C84E00ED37FB /* RMViewAnimator.m */; };
 		2610FFD01B02965E00437076 /* RMTruckSignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610FFCF1B02965E00437076 /* RMTruckSignUpVC.m */; };
 		2610FFD31B0296A400437076 /* RMPersonSignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610FFD21B0296A400437076 /* RMPersonSignUpVC.m */; };
 		26916EFF1B016DC100091113 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916EF91B016DC100091113 /* Bolts.framework */; };
@@ -59,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		260F6BE51B10C84E00ED37FB /* RMViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMViewAnimator.h; sourceTree = "<group>"; };
+		260F6BE61B10C84E00ED37FB /* RMViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMViewAnimator.m; sourceTree = "<group>"; };
 		2610FFCE1B02965E00437076 /* RMTruckSignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTruckSignUpVC.h; sourceTree = "<group>"; };
 		2610FFCF1B02965E00437076 /* RMTruckSignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTruckSignUpVC.m; sourceTree = "<group>"; };
 		2610FFD11B0296A400437076 /* RMPersonSignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPersonSignUpVC.h; sourceTree = "<group>"; };
@@ -279,6 +282,8 @@
 				26916F1D1B02468900091113 /* RMTruckEditView.h */,
 				26916F1E1B02468900091113 /* RMTruckEditView.m */,
 				26916F201B0246A000091113 /* RMTruckEditView.xib */,
+				260F6BE51B10C84E00ED37FB /* RMViewAnimator.h */,
+				260F6BE61B10C84E00ED37FB /* RMViewAnimator.m */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				26C7C3751AF9609F00D99828 /* RMTruckEditVC.m in Sources */,
 				26916F1F1B02468900091113 /* RMTruckEditView.m in Sources */,
 				2610FFD01B02965E00437076 /* RMTruckSignUpVC.m in Sources */,
+				260F6BE71B10C84E00ED37FB /* RMViewAnimator.m in Sources */,
 				26C7C3531AF95F4D00D99828 /* RMLoginVC.m in Sources */,
 				26C7C3721AF9607F00D99828 /* RMCheckInVC.m in Sources */,
 				26916F1C1B02359200091113 /* RMContentEditVC.m in Sources */,

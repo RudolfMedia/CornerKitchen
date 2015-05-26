@@ -94,13 +94,6 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iz0-2H-KCl">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Drag To Reposition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phT-EU-SET">
-                                            <rect key="frame" x="21" y="84" width="278" height="42"/>
-                                            <color key="backgroundColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="22"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Iz0-2H-KCl" secondAttribute="bottom" id="N2x-yr-qeR"/>
@@ -109,15 +102,28 @@
                                         <constraint firstItem="Iz0-2H-KCl" firstAttribute="top" secondItem="Lrk-ee-Kxa" secondAttribute="top" id="vD0-C0-d6y"/>
                                     </constraints>
                                 </scrollView>
+                                <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5m-D7-IyF">
+                                    <rect key="frame" x="21" y="80" width="278" height="50"/>
+                                    <color key="backgroundColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="5uE-tL-kH1"/>
+                                        <constraint firstAttribute="width" constant="278" id="pea-86-l0g"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
+                                    <state key="normal" title="Drag to position">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="PlI-1t-vAE" secondAttribute="height" multiplier="32:21" id="1Vz-pA-K2z"/>
                                 <constraint firstAttribute="trailing" secondItem="Lrk-ee-Kxa" secondAttribute="trailing" id="1yw-wb-lHh"/>
-                                <constraint firstAttribute="centerX" secondItem="phT-EU-SET" secondAttribute="centerX" id="CHl-Ny-tRh"/>
-                                <constraint firstAttribute="centerY" secondItem="phT-EU-SET" secondAttribute="centerY" id="M0w-lF-vwL"/>
+                                <constraint firstAttribute="centerY" secondItem="P5m-D7-IyF" secondAttribute="centerY" id="3iI-8g-uG2"/>
                                 <constraint firstItem="Lrk-ee-Kxa" firstAttribute="top" secondItem="PlI-1t-vAE" secondAttribute="top" id="SlM-eS-zHy"/>
                                 <constraint firstItem="Lrk-ee-Kxa" firstAttribute="leading" secondItem="PlI-1t-vAE" secondAttribute="leading" id="Wnt-Y7-7h8"/>
+                                <constraint firstAttribute="centerX" secondItem="P5m-D7-IyF" secondAttribute="centerX" id="bBD-Ei-hrr"/>
                                 <constraint firstAttribute="bottom" secondItem="Lrk-ee-Kxa" secondAttribute="bottom" id="jl0-Q0-Cty"/>
                             </constraints>
                         </view>
@@ -168,7 +174,7 @@
                 <outlet property="editScrollView" destination="Lrk-ee-Kxa" id="luT-b0-0fE"/>
                 <outlet property="imageContainer" destination="PlI-1t-vAE" id="tY8-na-j2o"/>
                 <outlet property="ownerName" destination="WQ8-rn-9uz" id="dM7-wL-Ecp"/>
-                <outlet property="positionLabel" destination="phT-EU-SET" id="CIR-FC-717"/>
+                <outlet property="positionButton" destination="P5m-D7-IyF" id="4AD-y4-sOw"/>
                 <outlet property="saveButton" destination="hoA-et-1IC" id="f78-pd-k3r"/>
                 <outlet property="saveIndicator" destination="UZW-6B-r0r" id="zTm-JH-UiR"/>
                 <outlet property="truckFoodType" destination="CfW-Q1-WBX" id="rr9-h3-NCM"/>

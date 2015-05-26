@@ -21,6 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *ownerName;
 @property (weak, nonatomic) IBOutlet UITextField *truckLogin;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *saveIndicator;
-@property (weak, nonatomic) IBOutlet UILabel *positionLabel;
+@property (weak, nonatomic) IBOutlet UIButton *positionButton;
 
 @end

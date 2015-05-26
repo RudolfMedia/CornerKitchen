@@ -8,6 +8,7 @@
 
 #import "RMLoginVC.h"
 #import "RMCheckInVC.h"
+#import "RMViewAnimator.h"
 
 @interface RMLoginVC ()
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *isPersonButton;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
+@property RMViewAnimator *animator;
 @property NSString *errorString;
 @property UIAlertView *alert;
 
@@ -57,8 +59,10 @@
     UITapGestureRecognizer *screenTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleLogin)];
     [self.view addGestureRecognizer:screenTap];
 
-    [self.emailTextField setHidden:YES];
-    [self.passwordTextfield setHidden:YES];
+    self.emailTextField.alpha = 0;
+    self.passwordTextfield.alpha = 0;
+
+    self.animator = [[RMViewAnimator alloc] init];
 
 }
 
@@ -71,9 +75,10 @@
 
 -(void)toggleLogin{
 
-    [self.loginButton setHidden:NO];
-    [self.isPersonButton setHidden:YES];
-    [self.isTruckButton setHidden:YES];
+    [self.animator alphaInView:self.loginButton];
+    [self.animator alphaOutView:self.isPersonButton];
+    [self.animator alphaOutView:self.isTruckButton];
+
     [self.emailTextField resignFirstResponder];
     [self.passwordTextfield resignFirstResponder];
     
@@ -84,7 +89,7 @@
 
 - (IBAction)onLoginPressed:(id)sender{
 
-    if (self.emailTextField.isHidden == NO) {
+    if (self.emailTextField.alpha == 1) {
 
         if (self.emailTextField.text.length < 5) {
 

@@ -23,6 +23,8 @@
                      image:(UIImage *)imageFile
                 completion:(void (^)(NSError *error))onComplete;
 
-
+- (void)createNewRegularUser:(NSString *)username
+                    password:(NSString *)password
+                  onComplete:(void (^) (NSError *))callback;
 
 @end

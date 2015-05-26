@@ -8,6 +8,7 @@
 
 #import "RMPersonSignUpVC.h"
 #import "RMContentEditVC.h"
+#import "RMDataLoader.h"
 
 @interface RMPersonSignUpVC ()
 @property (weak, nonatomic) IBOutlet UITextField *personEmail;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *personSignUpButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property NSString *errorString;
+@property RMDataLoader *dataLoader;
 @property UIAlertView *alert;
 
 @end
@@ -96,29 +98,33 @@
 
     else{
 
-        PFUser *newUser = [PFUser user];
-        newUser.username = [self.personEmail.text lowercaseString];\
-        newUser.password = self.personPassword.text;
-        newUser[@"isTruck"] = [NSNumber numberWithBool:NO];
+        self.dataLoader = [[RMDataLoader alloc] init];
+        [self.dataLoader createNewRegularUser:self.personEmail.text
+                                     password:self.personPassword.text
+                                   onComplete:^(NSError *error) {
 
-        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!error) {
+                                       if (!error) {
+                                           UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                           UITabBarController *userMain = [storyboard instantiateViewControllerWithIdentifier:@"USER_MAIN"];
+                                           [self presentViewController:userMain animated:YES completion:^{
+                                               
+                                           }];
 
-                
-                
 
-            }
+                                       }
 
-            else {
-                NSString *errorString = [error userInfo][@"error"];
-                self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                        message:errorString
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-                [self.alert show];
-            }
+                                       else{
 
+                                           self.errorString = [error userInfo][@"error"];
+                                           self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
+                                                                                   message:self.errorString
+                                                                                  delegate:self
+                                                                         cancelButtonTitle:@"OK"
+                                                                         otherButtonTitles:nil];
+
+                                       }
+
+                                       
         }];
 
         
