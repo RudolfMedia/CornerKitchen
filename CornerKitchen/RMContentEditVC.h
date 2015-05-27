@@ -13,5 +13,7 @@
 @interface RMContentEditVC : UIViewController
 
 @property (nonatomic, weak) RMTruck *currentTruck;
+@property PFObject *currentPFTruck;
+@property BOOL cameFromLogin;
 
 @end

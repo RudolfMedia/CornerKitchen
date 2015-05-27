@@ -20,6 +20,7 @@
 @property NSString *errorString;
 @property UIAlertView *alert;
 @property BOOL edited;
+
 #define kOFFSET_FOR_KEYBOARD 80.0
 
 @end
@@ -214,6 +215,9 @@
         [self.editView.cancelButton setHidden:YES];
         [self.editView.saveIndicator startAnimating];
         [self.editView.saveIndicator setHidden:NO];
+
+        if (self.cameFromLogin == NO) {
+
         [self.dataLoader createNewTruckUser:self.currentTruck.email
                                    password:self.currentTruck.password
                                   truckName:self.editView.truckName.text
@@ -257,6 +261,11 @@
             }
 
         }];
+
+        }
+        else{
+            
+        }
 
     }
 

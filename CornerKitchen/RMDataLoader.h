@@ -27,4 +27,7 @@
                     password:(NSString *)password
                   onComplete:(void (^) (NSError *))callback;
 
+- (void)retreiveCurrentTruckForUser:(PFUser *)currentUser
+                         onComplete:(void (^)(NSError *error, PFObject *truck))callback;
+
 @end

@@ -103,6 +103,30 @@
 
 }
 
+- (void)retreiveCurrentTruckForUser:(PFUser *)currentUser
+                         onComplete:(void (^)(NSError *error, PFObject *truck))callback{
+
+    PFQuery *query = [PFQuery queryWithClassName:@"Truck"];
+    [query whereKey:@"user" equalTo:currentUser];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+
+        if (!error) {
+            callback(nil, objects.firstObject);
+        }
+        else{
+            callback(error, nil);
+        }
+
+    }];
+
+}
+
+
+
+
+
+
+
 
 
 

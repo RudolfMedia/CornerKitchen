@@ -122,6 +122,7 @@
 
         RMContentEditVC *destination = [segue destinationViewController];
         destination.currentTruck = self.createdTruck;
+        destination.cameFromLogin = NO;
     }
 
 
