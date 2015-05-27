@@ -9,6 +9,8 @@
 #import "RMContentEditVC.h"
 #import "RMTruckEditView.h"
 #import "RMDataLoader.h"
+#import "SCLAlertView.h"
+
 @interface RMContentEditVC ()<UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScroll;
@@ -157,62 +159,50 @@
 
     if ([self.editView.editImageView image] == nil) {
 
-        self.errorString = @"Show Us Your Truck! We Know You Worked Hard On It.";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
+        self.errorString = @"Show us your Truck! We know you worked hard on it.";
 
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
     }
 
     else if (self.editView.truckLogin.text.length < 5){
 
-        self.errorString = @"You Need An Email To Log In";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
-
+        self.errorString = @"You need an email to log in with.";
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
     }
 
     else if (self.editView.truckName.text.length < 3){
 
-        self.errorString = @"Please Enter Your Truck Name";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
-
+        self.errorString = @"Please enter your Truck's name.";
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
     }
+
     else if (self.editView.truckFoodType.text.length < 3){
 
-        self.errorString = @"Tell Us What Kind Of Food You Serve";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
+        self.errorString = @"Tell us what kind of food you serve.";
 
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
     }
 
     else if (self.editView.ownerName.text.length <1){
 
-        self.errorString = @"Please Enter Your Name";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
+        self.errorString = @"Please enter your name";
 
-
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
     }
 
     else{
@@ -249,13 +239,10 @@
                 [self.editView.saveIndicator setHidden:YES];
                 NSString *errorString = [error userInfo][@"error"];
 
-                self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                        message:errorString
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-                [self.alert show];
-
+                SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+                [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                        subTitle:errorString
+                closeButtonTitle:@"OK" duration:0.0f];
             }
 
         }];

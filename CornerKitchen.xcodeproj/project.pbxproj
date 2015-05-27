@@ -10,12 +10,8 @@
 		260F6BE71B10C84E00ED37FB /* RMViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 260F6BE61B10C84E00ED37FB /* RMViewAnimator.m */; };
 		2610FFD01B02965E00437076 /* RMTruckSignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610FFCF1B02965E00437076 /* RMTruckSignUpVC.m */; };
 		2610FFD31B0296A400437076 /* RMPersonSignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610FFD21B0296A400437076 /* RMPersonSignUpVC.m */; };
-		26916EFF1B016DC100091113 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916EF91B016DC100091113 /* Bolts.framework */; };
-		26916F001B016DC100091113 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916EFA1B016DC100091113 /* Parse.framework */; };
-		26916F011B016DC100091113 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916EFB1B016DC100091113 /* ParseCrashReporting.framework */; };
-		26916F021B016DC100091113 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916EFC1B016DC100091113 /* ParseFacebookUtils.framework */; };
-		26916F031B016DC100091113 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916EFD1B016DC100091113 /* ParseFacebookUtilsV4.framework */; };
-		26916F041B016DC100091113 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916EFE1B016DC100091113 /* ParseUI.framework */; };
+		26364A231B165B22005681A9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26364A221B165B22005681A9 /* Bolts.framework */; };
+		26364A251B165B2D005681A9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26364A241B165B2D005681A9 /* Parse.framework */; };
 		26916F061B016E5000091113 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916F051B016E5000091113 /* AudioToolbox.framework */; };
 		26916F081B016E5700091113 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916F071B016E5700091113 /* CFNetwork.framework */; };
 		26916F0A1B016E6000091113 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26916F091B016E6000091113 /* CoreGraphics.framework */; };
@@ -29,6 +25,8 @@
 		26916F1C1B02359200091113 /* RMContentEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26916F1B1B02359200091113 /* RMContentEditVC.m */; };
 		26916F1F1B02468900091113 /* RMTruckEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26916F1E1B02468900091113 /* RMTruckEditView.m */; };
 		26916F211B0246A000091113 /* RMTruckEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26916F201B0246A000091113 /* RMTruckEditView.xib */; };
+		26C1BC401B1658D000FEE653 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C1BC3F1B1658D000FEE653 /* Social.framework */; };
+		26C1BC421B16592900FEE653 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C1BC411B16592900FEE653 /* Accounts.framework */; };
 		26C7C34D1AF95F4D00D99828 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C34C1AF95F4D00D99828 /* main.m */; };
 		26C7C3501AF95F4D00D99828 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C34F1AF95F4D00D99828 /* AppDelegate.m */; };
 		26C7C3531AF95F4D00D99828 /* RMLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3521AF95F4D00D99828 /* RMLoginVC.m */; };
@@ -47,6 +45,8 @@
 		26C7C3871AFA9AB000D99828 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C7C3861AFA9AB000D99828 /* CoreLocation.framework */; };
 		26C80BBA1AFE82EF003137F6 /* RMTruckDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C80BB91AFE82EF003137F6 /* RMTruckDetailView.m */; };
 		26C80BBC1AFE831F003137F6 /* RMTruckDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C80BBB1AFE831F003137F6 /* RMTruckDetailView.xib */; };
+		26FD72751B1656A400583D7B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 26FD72741B1656A400583D7B /* Podfile */; };
+		B327FFB59F996D12910EA7B5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7899684A590F0190E443FDBB /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +66,8 @@
 		2610FFCF1B02965E00437076 /* RMTruckSignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTruckSignUpVC.m; sourceTree = "<group>"; };
 		2610FFD11B0296A400437076 /* RMPersonSignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPersonSignUpVC.h; sourceTree = "<group>"; };
 		2610FFD21B0296A400437076 /* RMPersonSignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPersonSignUpVC.m; sourceTree = "<group>"; };
-		26916EF91B016DC100091113 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		26916EFA1B016DC100091113 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		26916EFB1B016DC100091113 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		26916EFC1B016DC100091113 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		26916EFD1B016DC100091113 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		26916EFE1B016DC100091113 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		26364A221B165B22005681A9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		26364A241B165B2D005681A9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		26916F051B016E5000091113 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		26916F071B016E5700091113 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		26916F091B016E6000091113 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,6 +83,8 @@
 		26916F1D1B02468900091113 /* RMTruckEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTruckEditView.h; sourceTree = "<group>"; };
 		26916F1E1B02468900091113 /* RMTruckEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTruckEditView.m; sourceTree = "<group>"; };
 		26916F201B0246A000091113 /* RMTruckEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTruckEditView.xib; sourceTree = "<group>"; };
+		26C1BC3F1B1658D000FEE653 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		26C1BC411B16592900FEE653 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		26C7C3471AF95F4D00D99828 /* CornerKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CornerKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C7C34B1AF95F4D00D99828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C7C34C1AF95F4D00D99828 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,6 +114,10 @@
 		26C80BB81AFE82EF003137F6 /* RMTruckDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTruckDetailView.h; sourceTree = "<group>"; };
 		26C80BB91AFE82EF003137F6 /* RMTruckDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTruckDetailView.m; sourceTree = "<group>"; };
 		26C80BBB1AFE831F003137F6 /* RMTruckDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTruckDetailView.xib; sourceTree = "<group>"; };
+		26FD72741B1656A400583D7B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		472797B9762AA00ED528544B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7899684A590F0190E443FDBB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F64263AC9CD8C35B3C6B97 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,24 +125,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C1BC421B16592900FEE653 /* Accounts.framework in Frameworks */,
+				26C1BC401B1658D000FEE653 /* Social.framework in Frameworks */,
 				26916F181B016EA500091113 /* libsqlite3.dylib in Frameworks */,
 				26916F161B016E9800091113 /* libz.dylib in Frameworks */,
 				26916F141B016E8E00091113 /* SystemConfiguration.framework in Frameworks */,
 				26916F121B016E8300091113 /* StoreKit.framework in Frameworks */,
+				26364A251B165B2D005681A9 /* Parse.framework in Frameworks */,
 				26916F101B016E7D00091113 /* Security.framework in Frameworks */,
 				26916F0E1B016E7500091113 /* QuartzCore.framework in Frameworks */,
 				26916F0C1B016E6D00091113 /* MobileCoreServices.framework in Frameworks */,
 				26916F0A1B016E6000091113 /* CoreGraphics.framework in Frameworks */,
 				26916F081B016E5700091113 /* CFNetwork.framework in Frameworks */,
 				26916F061B016E5000091113 /* AudioToolbox.framework in Frameworks */,
-				26916EFF1B016DC100091113 /* Bolts.framework in Frameworks */,
-				26916F011B016DC100091113 /* ParseCrashReporting.framework in Frameworks */,
-				26916F031B016DC100091113 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				26916F021B016DC100091113 /* ParseFacebookUtils.framework in Frameworks */,
 				26C7C3871AFA9AB000D99828 /* CoreLocation.framework in Frameworks */,
-				26916F001B016DC100091113 /* Parse.framework in Frameworks */,
-				26916F041B016DC100091113 /* ParseUI.framework in Frameworks */,
 				26C7C3851AFA9AAB00D99828 /* MapKit.framework in Frameworks */,
+				B327FFB59F996D12910EA7B5 /* libPods.a in Frameworks */,
+				26364A231B165B22005681A9 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,10 +155,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1585AC6B675E908E10F5FB74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26C1BC411B16592900FEE653 /* Accounts.framework */,
+				26C1BC3F1B1658D000FEE653 /* Social.framework */,
+				7899684A590F0190E443FDBB /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		26916F191B016EB900091113 /* LinkedLibs */ = {
 			isa = PBXGroup;
 			children = (
+				26364A241B165B2D005681A9 /* Parse.framework */,
 				26916F171B016EA500091113 /* libsqlite3.dylib */,
+				26364A221B165B22005681A9 /* Bolts.framework */,
 				26916F131B016E8E00091113 /* SystemConfiguration.framework */,
 				26916F111B016E8300091113 /* StoreKit.framework */,
 				26916F0F1B016E7D00091113 /* Security.framework */,
@@ -166,12 +179,6 @@
 				26916F091B016E6000091113 /* CoreGraphics.framework */,
 				26916F071B016E5700091113 /* CFNetwork.framework */,
 				26916F051B016E5000091113 /* AudioToolbox.framework */,
-				26916EF91B016DC100091113 /* Bolts.framework */,
-				26916EFA1B016DC100091113 /* Parse.framework */,
-				26916EFB1B016DC100091113 /* ParseCrashReporting.framework */,
-				26916EFC1B016DC100091113 /* ParseFacebookUtils.framework */,
-				26916EFD1B016DC100091113 /* ParseFacebookUtilsV4.framework */,
-				26916EFE1B016DC100091113 /* ParseUI.framework */,
 				26C7C3861AFA9AB000D99828 /* CoreLocation.framework */,
 				26C7C3841AFA9AAB00D99828 /* MapKit.framework */,
 				26916F151B016E9800091113 /* libz.dylib */,
@@ -182,10 +189,13 @@
 		26C7C33E1AF95F4D00D99828 = {
 			isa = PBXGroup;
 			children = (
+				26FD72741B1656A400583D7B /* Podfile */,
 				26916F191B016EB900091113 /* LinkedLibs */,
 				26C7C3491AF95F4D00D99828 /* CornerKitchen */,
 				26C7C3631AF95F4D00D99828 /* CornerKitchenTests */,
 				26C7C3481AF95F4D00D99828 /* Products */,
+				BC09804C6C696440F3A4E4F0 /* Pods */,
+				1585AC6B675E908E10F5FB74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -288,6 +298,15 @@
 			name = CustomViews;
 			sourceTree = "<group>";
 		};
+		BC09804C6C696440F3A4E4F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92F64263AC9CD8C35B3C6B97 /* Pods.debug.xcconfig */,
+				472797B9762AA00ED528544B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -295,9 +314,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26C7C36A1AF95F4D00D99828 /* Build configuration list for PBXNativeTarget "CornerKitchen" */;
 			buildPhases = (
+				93B8EEB3ECD36895B804CC96 /* Check Pods Manifest.lock */,
 				26C7C3431AF95F4D00D99828 /* Sources */,
 				26C7C3441AF95F4D00D99828 /* Frameworks */,
 				26C7C3451AF95F4D00D99828 /* Resources */,
+				4EDD7EEAD212E2D435B203E3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -374,6 +395,7 @@
 				26C7C35B1AF95F4D00D99828 /* LaunchScreen.xib in Resources */,
 				26C7C3581AF95F4D00D99828 /* Images.xcassets in Resources */,
 				26916F211B0246A000091113 /* RMTruckEditView.xib in Resources */,
+				26FD72751B1656A400583D7B /* Podfile in Resources */,
 				26C7C3811AF961DB00D99828 /* Quicksand-Bold.ttf in Resources */,
 				26C7C3821AF961DB00D99828 /* Quicksand-Light.ttf in Resources */,
 			);
@@ -387,6 +409,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EDD7EEAD212E2D435B203E3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93B8EEB3ECD36895B804CC96 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26C7C3431AF95F4D00D99828 /* Sources */ = {
@@ -525,6 +580,7 @@
 		};
 		26C7C36B1AF95F4D00D99828 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92F64263AC9CD8C35B3C6B97 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -540,6 +596,7 @@
 		};
 		26C7C36C1AF95F4D00D99828 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 472797B9762AA00ED528544B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -9,6 +9,8 @@
 #import "RMTruckSignUpVC.h"
 #import "RMTruck.h"
 #import "RMContentEditVC.h"
+#import "SCLAlertView.h"
+
 
 @interface RMTruckSignUpVC ()
 @property (weak, nonatomic) IBOutlet UITextField *truckEmail;
@@ -73,42 +75,33 @@
 
     if (self.truckEmail.text.length < 5) {
 
-        self.errorString = @"Please Enter a Valid Email";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
+        self.errorString = @"Please enter a valid email address.";
 
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
     }
 
 
     else if (self.truckPassword.text.length <5){
 
-        self.errorString = @"Password Must Be At Least 5 Characters Long";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
+        self.errorString = @"Password must be at least 5 characters long.";
 
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
     }
 
 
     else if (![self.truckPassword.text isEqualToString:self.truckConfirmPass.text]){
 
-        self.errorString = @"Passwords Don't Match";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
-
-
-
+        self.errorString = @"Passwords do not match.";
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
     }
 
     else{

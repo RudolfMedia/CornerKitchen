@@ -9,6 +9,7 @@
 #import "RMPersonSignUpVC.h"
 #import "RMContentEditVC.h"
 #import "RMDataLoader.h"
+#import "SCLAlertView.h"
 
 @interface RMPersonSignUpVC ()
 @property (weak, nonatomic) IBOutlet UITextField *personEmail;
@@ -63,37 +64,33 @@
 
     if(self.personEmail.text.length < 5){
 
-        self.errorString = @"Please Enter a Valid Email";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
 
+        self.errorString = @"Please enter a valid email address.";
+
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
 
     }
     else if (self.personPassword.text.length < 5){
 
-        self.errorString = @"Password Must Be At Least 5 Characters Long";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        self.errorString = @"Passwords must be at least 5 characters long.";
+
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
 
     }
     else if (![self.personPassword.text isEqualToString:self.personConfirmPassword.text]){
 
-        self.errorString = @"Passwords Don't Match";
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                message:self.errorString
-                                               delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-        [self.alert show];
+        self.errorString = @"Passwords do not match.";
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
 
+        [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                subTitle:self.errorString
+        closeButtonTitle:@"OK" duration:0.0f];
     }
 
     else{
@@ -116,12 +113,12 @@
                                        else{
 
                                            self.errorString = [error userInfo][@"error"];
-                                           self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                                                   message:self.errorString
-                                                                                  delegate:self
-                                                                         cancelButtonTitle:@"OK"
-                                                                         otherButtonTitles:nil];
+                                           
+                                           SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
 
+                                           [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                                                   subTitle:self.errorString
+                                           closeButtonTitle:@"OK" duration:0.0f];
                                        }
 
                                        

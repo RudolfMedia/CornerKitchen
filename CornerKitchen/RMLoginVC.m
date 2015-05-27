@@ -9,6 +9,7 @@
 #import "RMLoginVC.h"
 #import "RMCheckInVC.h"
 #import "RMViewAnimator.h"
+#import "SCLAlertView.h"
 
 @interface RMLoginVC ()
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -93,25 +94,23 @@
 
         if (self.emailTextField.text.length < 5) {
 
-            self.errorString = @"Please Enter a Valid Email";
-            self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                    message:self.errorString
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-            [self.alert show];
+            SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+
+            self.errorString = @"Please enter a valid email address.";
+
+            [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                    subTitle:self.errorString
+            closeButtonTitle:@"OK" duration:0.0f];
 
         }
         else if (self.passwordTextfield.text.length <5){
 
-            self.errorString = @"Please Enter a Valid Password";
-            self.alert = [[UIAlertView alloc] initWithTitle:@"Oops! \xF0\x9F\x99\x88"
-                                                    message:self.errorString
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-            [self.alert show];
+            SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+            self.errorString = @"Passwords must be at least 5 characters long.";
 
+            [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                    subTitle:self.errorString
+            closeButtonTitle:@"OK" duration:0.0f];
         }
 
         else{
