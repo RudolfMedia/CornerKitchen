@@ -223,12 +223,23 @@
                                  completion:^(NSError *error) {
 
             if (!error) {
-                
-                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                UITabBarController *truckMain = [storyboard instantiateViewControllerWithIdentifier:@"TRUCK_MAIN"];
-                [self presentViewController:truckMain animated:YES completion:^{
+
+                SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+                [alert addButton:@"Ok" actionBlock:^{
+                    
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    UITabBarController *truckMain = [storyboard instantiateViewControllerWithIdentifier:@"TRUCK_MAIN"];
+                    [self presentViewController:truckMain animated:YES completion:^{
+
+                    }];
+
 
                 }];
+
+                [alert showSuccess:@"Congratulations"
+                          subTitle:[NSString stringWithFormat:@"%@ is now registered with Corner Kitchen, add a menu and start checking in!", self.editView.truckName.text]
+                  closeButtonTitle:nil
+                          duration:0.0f];
 
             }
             else{

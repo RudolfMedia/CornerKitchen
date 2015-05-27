@@ -132,7 +132,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     RMContentEditVC *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LOGIN_MAIN"];
 
-    [self presentViewController:loginVC animated:YES completion:^{
+    [self presentViewController:loginVC animated:NO completion:^{
 
     }];
 }

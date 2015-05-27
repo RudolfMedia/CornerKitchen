@@ -69,8 +69,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
 
-    [self.isPersonButton setHidden:YES];
-    [self.isTruckButton setHidden:YES];
+    self.isPersonButton.alpha = 0;
+    self.isTruckButton.alpha = 0;
     
 }
 
@@ -146,8 +146,8 @@
         }
     }
 
-    [self.emailTextField setHidden:NO];
-    [self.passwordTextfield setHidden:NO];
+    [self.animator alphaInView:self.emailTextField];
+    [self.animator alphaInView:self.passwordTextfield];
 
 
 }
@@ -155,11 +155,11 @@
 
 - (IBAction)onSignupPressed:(id)sender{
 
-    [self.isPersonButton setHidden:NO];
-    [self.isTruckButton setHidden:NO];
-    [self.loginButton setHidden:YES];
-    [self.emailTextField setHidden:YES];
-    [self.passwordTextfield setHidden:YES];
+    [self.animator alphaInView:self.isTruckButton];
+    [self.animator alphaInView:self.isPersonButton];
+    [self.animator alphaOutView:self.loginButton];
+    [self.animator alphaOutView:self.emailTextField];
+    [self.animator alphaOutView:self.passwordTextfield];
 
 }
 

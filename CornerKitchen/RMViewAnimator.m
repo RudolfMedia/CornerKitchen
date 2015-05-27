@@ -13,6 +13,8 @@
 
 - (void)alphaInView:(UIView *)view{
 
+    if (view.alpha == 0) {
+
     view.alpha = 0;
     [UIView animateWithDuration:.2
                      animations:^{
@@ -21,9 +23,12 @@
                      completion:^(BOOL finished) {
 
                      }];
+    }
 }
 
 - (void)alphaOutView:(UIView *)view{
+
+    if (view.alpha == 1) {
 
     view.alpha = 1;
     [UIView animateWithDuration:.2
@@ -32,6 +37,9 @@
                      }
                      completion:^(BOOL finished) {
 
-                     }];}
+                     }];
+    }
+
+}
 
 @end

@@ -195,7 +195,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onIsPersonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nQg-cx-Ji8"/>
-                                    <segue destination="azw-eJ-hDQ" kind="modal" id="yEt-1H-t7W"/>
+                                    <segue destination="azw-eJ-hDQ" kind="modal" modalTransitionStyle="crossDissolve" id="yEt-1H-t7W"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Corner Kitchen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otv-ot-M9X">
@@ -218,7 +218,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onIsTruckPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wQR-hZ-yti"/>
-                                    <segue destination="cMY-NQ-yeu" kind="modal" id="fmn-o1-56G"/>
+                                    <segue destination="cMY-NQ-yeu" kind="modal" modalTransitionStyle="crossDissolve" id="fmn-o1-56G"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNy-5u-THB">
