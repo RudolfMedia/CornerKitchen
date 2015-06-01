@@ -87,6 +87,23 @@
 }
 
 
+-(UIImage *)cropImageFromImageView:(UIImage *)image withView:(UIImageView *)view inContainer:(UIScrollView *)scrollConatiner{
+
+    float scale = 1.0f/scrollConatiner.zoomScale;
+
+    CGRect cropRect;
+    cropRect.origin.x = scrollConatiner.contentOffset.x * scale;
+    cropRect.origin.y = scrollConatiner.contentOffset.y * scale;
+    cropRect.size.height = scrollConatiner.bounds.size.height * scale;
+    cropRect.size.width = scrollConatiner.bounds.size.width * scale;
+
+    CGImageRef imgRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
+
+    UIImage *cropped = [UIImage imageWithCGImage:imgRef];
+
+    return cropped;
+}
+
 #pragma mark - ScrollView Delegate
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
@@ -216,14 +233,17 @@
         [self.editView.saveIndicator startAnimating];
         [self.editView.saveIndicator setHidden:NO];
 
-        if (self.cameFromLogin == NO) {
+     //   if (self.cameFromLogin == NO) {
 
         [self.dataLoader createNewTruckUser:self.currentTruck.email
                                    password:self.currentTruck.password
                                   truckName:self.editView.truckName.text
                                  typeOfFood:self.editView.truckFoodType.text
                                   ownerName:self.editView.ownerName.text
-                                      image:self.editView.editImageView.image
+                                      image:[self cropImageFromImageView:self.editView.editImageView.image
+                                                                withView:self.editView.editImageView
+                                                             inContainer:self.editView.editScrollView]
+         
                                  completion:^(NSError *error) {
 
             if (!error) {
@@ -262,10 +282,10 @@
 
         }];
 
-        }
-        else{
-            
-        }
+//        }
+//        else{
+//            
+//        }
 
     }
 
@@ -375,6 +395,9 @@
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
 }
+
+
+
 
 
 

@@ -100,7 +100,7 @@
 
 
 }
-#warning this segue could potentially crash with null truck
+#warning this segue could potentially crash with null truck, SETUP VIEW WITH CURRENT TRUCK DETAILS
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
