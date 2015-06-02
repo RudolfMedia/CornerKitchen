@@ -20,6 +20,7 @@
 @property NSString *errorString;
 @property UIAlertView *alert;
 @property BOOL edited;
+@property BOOL cameFromPicker;
 
 #define kOFFSET_FOR_KEYBOARD 80.0
 
@@ -34,6 +35,8 @@
     self.contentScroll.delegate = self;
     [self.editView.saveIndicator setHidden:YES];
 
+    self.cameFromPicker = NO;
+
     self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.editView.frame.size.height);
     self.contentScroll.decelerationRate = UIScrollViewDecelerationRateFast;
     [self.contentScroll addSubview:self.editView];
@@ -44,6 +47,8 @@
 
     [self applySelectors];
     [self fillOutDetails:self.currentTruck];
+
+    self.editView.editScrollView.delegate = self;
 
     UITapGestureRecognizer *hideKeyboard = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                    action:@selector(hidekeyboards)];
@@ -56,6 +61,8 @@
 
 
     [self.editView.positionButton setHidden:YES];
+
+
 }
 
 #pragma mark - View formatting
@@ -83,6 +90,14 @@
     [self.editView.positionButton setHidden:NO];
     self.contentScroll.scrollEnabled = NO;
     self.editView.editScrollView.scrollEnabled = YES;
+    self.cameFromPicker = YES;
+
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+
+    self.cameFromPicker = YES;
+    [picker dismissViewControllerAnimated:YES completion:NULL];
 
 }
 
@@ -233,7 +248,7 @@
         [self.editView.saveIndicator startAnimating];
         [self.editView.saveIndicator setHidden:NO];
 
-     //   if (self.cameFromLogin == NO) {
+        if (self.cameFromLogin == NO) {
 
         [self.dataLoader createNewTruckUser:self.currentTruck.email
                                    password:self.currentTruck.password
@@ -282,10 +297,47 @@
 
         }];
 
-//        }
-//        else{
-//            
-//        }
+        }
+        else{
+
+
+            [self.dataLoader updateCurrentTruckProfile:self.currentPFTruck
+                                             truckName:self.editView.truckName.text
+                                            typeOfFood:self.editView.truckFoodType.text
+                                             ownerName:self.editView.ownerName.text
+                                                 image:[self cropImageFromImageView:self.editView.editImageView.image
+
+                                                                           withView:self.editView.editImageView
+
+                                                                        inContainer:self.editView.editScrollView]
+
+                                            onComplete:^(NSError *error) {
+
+
+                                                if (!error) {
+
+                                                    SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+                                                    [alert showSuccess:@"Congratulations"
+                                                              subTitle:@"Your profile has been updated!"
+                                                      closeButtonTitle:@"OK"
+                                                              duration:0.0f];
+
+                                                    [self performSegueWithIdentifier:@"UNWIND_FROM_EDIT" sender:self];
+
+                                                }
+                                                else{
+
+                                                    NSString *errorString = [error userInfo][@"error"];
+                                                    SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+                                                    [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                                                            subTitle:errorString
+                                                    closeButtonTitle:@"OK" duration:0.0f];
+
+                                                }
+
+                                             }];
+            
+        }
 
     }
 
@@ -299,6 +351,19 @@
 
     self.editView.truckLogin.text = visible.email;
 
+
+}
+
+- (void)presentCurrentTruck{
+
+    self.editView.truckName.text = self.currentPFTruck[@"name"];
+    self.editView.truckFoodType.text = self.currentPFTruck[@"foodType"];
+    self.editView.editImageView.image = self.truckImage;
+    self.editView.ownerName.text = self.currentPFTruck[@"ownerName"];
+    self.editView.truckLogin.text = [PFUser currentUser].username;
+
+    self.editView.editScrollView.minimumZoomScale = self.editView.imageContainer.frame.size.width / self.truckImage.size.width;
+    self.editView.editScrollView.zoomScale =  self.editView.editScrollView.minimumZoomScale;
 
 }
 
@@ -394,6 +459,16 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+
+    if (self.cameFromLogin == YES && self.cameFromPicker == NO) {
+        [self presentCurrentTruck];
+    }
+    else if (self.cameFromLogin == NO && self.cameFromPicker == NO){
+        [self fillOutDetails:self.currentTruck];
+    }
 }
 
 

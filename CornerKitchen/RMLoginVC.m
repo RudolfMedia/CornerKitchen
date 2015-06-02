@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *isPersonButton;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
+
 @property RMViewAnimator *animator;
 @property NSString *errorString;
 @property UIAlertView *alert;
@@ -86,6 +87,7 @@
 }
 
 
+
 #pragma mark - Actions
 
 - (IBAction)onLoginPressed:(id)sender{
@@ -135,6 +137,11 @@
 
                                                 }
                                                 else{
+
+                                                    SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+                                                    [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                                                            subTitle:[error userInfo][@"error"]
+                                                    closeButtonTitle:@"OK" duration:0.0f];
 
                                                 }
 

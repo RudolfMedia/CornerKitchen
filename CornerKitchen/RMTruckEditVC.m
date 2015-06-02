@@ -10,14 +10,12 @@
 #import "RMTruckDetailView.h"
 #import "RMContentEditVC.h"
 #import "RMTruck.h"
-#import "RMDataLoader.h"
 
 @interface RMTruckEditVC ()<UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScroll;
 @property RMTruckDetailView *detailView;
-@property RMDataLoader *dataLoader;
-@property PFObject *currentTruck;
+@property UIImage *truckImage;
 
 @end
 
@@ -27,14 +25,10 @@
     [super viewDidLoad];
 
     self.detailView = [RMTruckDetailView truckDetailCustomView];
-    self.dataLoader = [[RMDataLoader alloc] init];
 
     self.contentScroll.delegate = self;
     self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.detailView.frame.size.height);
     self.contentScroll.decelerationRate = UIScrollViewDecelerationRateFast;
-
-    [self.detailView.activityIndicator stopAnimating];
-    [self.detailView.activityIndicator setHidden:YES];
 
     [self roundViewCorners:self.detailView.menuTableView];
     [self roundViewCorners:self.detailView.menutView];
@@ -43,7 +37,8 @@
 
     [self.contentScroll addSubview:self.detailView];
     [self applySelectors];
-    [self populateViewWithCurrentTruck];
+
+    [self populateViewWithCurrentTruck:self.currentPFTruck];
 
 
 }
@@ -75,41 +70,51 @@
 
 }
 
-- (void)populateViewWithCurrentTruck{
+- (void)populateViewWithCurrentTruck:(PFObject *)truck{
 
     [self.detailView.activityIndicator startAnimating];
     [self.detailView.activityIndicator setHidden:NO];
+    self.detailView.truckName.text = truck[@"name"];
+    self.detailView.foodType.text = truck[@"foodType"];
 
-    [self.dataLoader retreiveCurrentTruckForUser:[PFUser currentUser]
-                                      onComplete:^(NSError *error, PFObject *truck) {
-                                          if (!error) {
+    PFFile *truckPhotoFile = truck[@"profileImage"];
+    [truckPhotoFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
 
-                                              self.currentTruck = truck;
+            self.truckImage = [UIImage imageWithData:imageData];
+            self.detailView.truckImage.image = self.truckImage;
+        }
 
-                                              [self.detailView.activityIndicator stopAnimating];
-                                              [self.detailView.activityIndicator setHidden:YES];
-                                          }
-
-                                          else{
-
-                                              NSLog(@"Error: %@ %@", error, [error userInfo]);
-                                              [self.detailView.activityIndicator stopAnimating];
-                                              [self.detailView.activityIndicator setHidden:YES];
-                                          }
     }];
+
+    [self.detailView.activityIndicator stopAnimating];
+    [self.detailView.activityIndicator setHidden:YES];
 
 
 }
-#warning this segue could potentially crash with null truck, SETUP VIEW WITH CURRENT TRUCK DETAILS
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
     if ([segue.identifier isEqualToString:@"EDIT_TRUCK_LOGGED"]) {
         RMContentEditVC *destintion = [segue destinationViewController];
         destintion.cameFromLogin = YES;
-        destintion.currentPFTruck = self.currentTruck;
+        destintion.currentPFTruck = self.currentPFTruck;
+        destintion.truckImage = self.truckImage;
     }
 
+}
+
+- (IBAction)unwindFromDetail:(UIStoryboardSegue *)segue{
+
+    [self.dataLoader retreiveCurrentTruckForUser:[PFUser currentUser]
+                                      onComplete:^(NSError *error, PFObject *truck) {
+
+                                          if (!error) {
+
+                                              self.currentPFTruck = truck;
+                                              [self populateViewWithCurrentTruck:truck];
+                                          }
+    }];
 }
 
 

@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
 
 @interface RMCheckInVC : UIViewController
+
+@property PFObject *currentPFTruck;
+
+
 
 @end

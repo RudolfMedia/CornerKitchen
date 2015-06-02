@@ -30,4 +30,10 @@
 - (void)retreiveCurrentTruckForUser:(PFUser *)currentUser
                          onComplete:(void (^)(NSError *error, PFObject *truck))callback;
 
+- (void)updateCurrentTruckProfile:(PFObject *)truck truckName:(NSString *)truckname
+                       typeOfFood:(NSString *)typeOfFood
+                        ownerName:(NSString *)ownerName
+                            image:(UIImage *)image
+                       onComplete:(void (^) (NSError *error))onComplete;
+
 @end

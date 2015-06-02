@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import <Parse/Parse.h>
+#import "RMDataLoader.h"
 
 @interface RMLoginVC : UIViewController
 
+@property RMDataLoader *dataLoader;
+@property PFObject *currentPFTruck;
 
 @end
 

@@ -9,13 +9,17 @@
 #import "RMCheckInVC.h"
 #import "AppDelegate.h"
 #import "RMViewAnimator.h"
+#import "RMDataLoader.h"
+#import "SCLAlertView.h"
+#import "RMTruckEditVC.h"
 
-@interface RMCheckInVC ()<MKMapViewDelegate, CLLocationManagerDelegate>
+@interface RMCheckInVC ()<MKMapViewDelegate, CLLocationManagerDelegate, UITabBarControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet MKMapView *checkinMapView;
 @property (weak, nonatomic) IBOutlet UIButton *checkinButton;
 @property RMViewAnimator *animator;
+@property RMDataLoader *dataLoader;
 @property CLLocationCoordinate2D checkinLocationCoordinate;
 @property CLLocationManager *locationManager;
 
@@ -25,7 +29,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarController.delegate = self;
     [self setUpTabBar];
+
+    self.dataLoader = [[RMDataLoader alloc] init];
 
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -34,7 +41,7 @@
     self.checkinButton.layer.cornerRadius = 5;
 
     self.animator = [[RMViewAnimator alloc] init];
-
+    [self getTruck];
 
 }
 
@@ -50,6 +57,36 @@
 
     [self.checkinMapView.superview addSubview:imageView];
 
+}
+
+- (void)getTruck{
+
+    [self.dataLoader retreiveCurrentTruckForUser:[PFUser currentUser]
+                                      onComplete:^(NSError *error, PFObject *truck) {
+                                          if (!error) {
+
+                                              self.currentPFTruck = truck;
+
+                                          }
+
+                                          else{
+
+                                              NSLog(@"Error: %@ %@", error, [error userInfo]);
+                                              SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+                                              [alert addButton:@"Try Again" actionBlock:^{
+
+                                              [self getTruck];
+
+                                              }];
+
+                                              [alert showError:@"Oops! \xF0\x9F\x99\x88"
+                                                      subTitle:@"Error Retreiving your profile"
+                                              closeButtonTitle:@"OK" duration:0.0f];
+                                              
+                                          }
+                                      }];
+    
+    
 }
 
 
@@ -95,6 +132,19 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 500, 500);
     [self.checkinMapView setRegion:region animated:NO];
 
+}
+
+#pragma mark - TabBarDelegate
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+
+    if ([viewController.childViewControllers.firstObject isKindOfClass:[RMTruckEditVC class]]) {
+        RMTruckEditVC *destination = (RMTruckEditVC *)viewController.childViewControllers.firstObject;
+        destination.dataLoader = self.dataLoader;
+        destination.currentPFTruck = self.currentPFTruck;
+
+    }
+    return TRUE;
 }
 
 #pragma mark - Actions

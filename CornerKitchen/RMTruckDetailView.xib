@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -78,7 +78,7 @@
                                 <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DmZ-gs-Jcg">
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DmZ-gs-Jcg">
                             <rect key="frame" x="142" y="86" width="37" height="37"/>
                             <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </activityIndicatorView>
@@ -89,6 +89,7 @@
                         <constraint firstAttribute="trailing" secondItem="cpc-tC-TKc" secondAttribute="trailing" constant="16" id="5eA-Fo-xfY"/>
                         <constraint firstAttribute="centerX" secondItem="vGT-df-GV3" secondAttribute="centerX" id="EhB-HS-WZb"/>
                         <constraint firstAttribute="trailing" secondItem="nsJ-CJ-VvL" secondAttribute="trailing" constant="16" id="Huh-QS-Xmi"/>
+                        <constraint firstAttribute="centerX" secondItem="DmZ-gs-Jcg" secondAttribute="centerX" id="J5K-fi-7kR"/>
                         <constraint firstAttribute="centerX" secondItem="pQk-aF-8Um" secondAttribute="centerX" id="MTh-bY-JPo"/>
                         <constraint firstItem="nsJ-CJ-VvL" firstAttribute="leading" secondItem="u5f-I8-EUG" secondAttribute="leading" constant="16" id="MwY-ZQ-KMz"/>
                         <constraint firstItem="cpc-tC-TKc" firstAttribute="leading" secondItem="u5f-I8-EUG" secondAttribute="leading" constant="16" id="P8P-PU-dFh"/>

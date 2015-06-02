@@ -110,14 +110,72 @@
     [query whereKey:@"user" equalTo:currentUser];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 
-        if (!error) {
+        if (objects.count == 1) {
             callback(nil, objects.firstObject);
         }
         else{
-            callback(error, nil);
+
+            NSError *findError = [[NSError alloc] initWithDomain:@"No Profile" code:101 userInfo:@{@"user" : @"Erro Retreiving Profile"}];
+            callback(findError, nil);
         }
 
     }];
+
+}
+
+
+-(void)updateCurrentTruckProfile:(PFObject *)truck
+                       truckName:(NSString *)truckName
+                      typeOfFood:(NSString *)typeOfFood
+                       ownerName:(NSString *)ownerName
+                           image:(UIImage *)image
+                      onComplete:(void (^)(NSError *))onComplete{
+
+    PFObject *currentTruck = truck;
+    currentTruck[@"name"] = truckName;
+    currentTruck[@"foodType"] = typeOfFood;
+    currentTruck[@"ownerName"] = ownerName;
+//    currentTruck[@"user"] = [PFUser currentUser];
+
+    [currentTruck saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+
+            NSData *raw = UIImagePNGRepresentation(image);
+            PFFile *file = [PFFile fileWithName:@"truckImage.png" data:raw];
+            [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+                if (succeeded) {
+
+                    currentTruck[@"profileImage"] = file;
+                    [currentTruck saveInBackgroundWithBlock:^(BOOL succeded, NSError *error){
+
+                        if (succeeded) {
+                            onComplete(nil);
+                        }
+                        else{
+                            onComplete(error);
+                        }
+
+                    }];
+
+                }
+
+                else{
+                    onComplete(error);
+                }
+
+            }];
+
+        }
+
+        else {
+            onComplete(error);
+        }
+
+    }];
+
+
+
+
 
 }
 

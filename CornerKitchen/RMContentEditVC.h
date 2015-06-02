@@ -14,6 +14,7 @@
 
 @property (nonatomic, weak) RMTruck *currentTruck;
 @property PFObject *currentPFTruck;
+@property UIImage *truckImage;
 @property BOOL cameFromLogin;
 
 @end

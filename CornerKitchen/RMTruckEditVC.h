@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RMDataLoader.h"
+#import <Parse/Parse.h>
 
 @interface RMTruckEditVC : UIViewController
+
+@property RMDataLoader *dataLoader;
+@property PFObject *currentPFTruck;
 
 @end
