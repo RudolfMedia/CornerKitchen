@@ -36,4 +36,7 @@
                             image:(UIImage *)image
                        onComplete:(void (^) (NSError *error))onComplete;
 
+- (void)getMenuItemsForCurrentTruck:(PFObject *)truck
+                         onComplete:(void (^) (NSError *error, NSArray *items))callback;
+
 @end

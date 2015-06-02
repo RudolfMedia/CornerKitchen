@@ -135,7 +135,6 @@
     currentTruck[@"name"] = truckName;
     currentTruck[@"foodType"] = typeOfFood;
     currentTruck[@"ownerName"] = ownerName;
-//    currentTruck[@"user"] = [PFUser currentUser];
 
     [currentTruck saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -179,8 +178,27 @@
 
 }
 
+- (void)getMenuItemsForCurrentTruck:(PFObject *)truck
+                         onComplete:(void (^)(NSError *error, NSArray *menuItems))callback{
+
+    PFQuery *menuQuery = [PFQuery queryWithClassName:@"MenuItem"];
+    [menuQuery whereKey:@"truck" equalTo:truck];
+    [menuQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+
+        if (!error) {
+
+            callback(nil, objects);
+        }
+
+        else {
+            callback(error, nil);
+
+        }
 
 
+    }];
+
+}
 
 
 

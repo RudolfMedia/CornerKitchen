@@ -178,6 +178,7 @@
 
 - (void)onCancelPressed{
 
+    if (self.cameFromLogin == NO) {
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         RMContentEditVC *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LOGIN_MAIN"];
@@ -185,7 +186,13 @@
         [self presentViewController:loginVC animated:YES completion:^{
             
         }];
+    }
+    else if (self.cameFromLogin == YES){
 
+        [self dismissViewControllerAnimated:YES completion:^{
+
+        }];
+    }
 }
 
 -(void)onSavePressed{
@@ -366,6 +373,8 @@
     self.editView.editScrollView.zoomScale =  self.editView.editScrollView.minimumZoomScale;
 
 }
+
+
 
 #pragma mark - KeyBoard Delegate
 

@@ -45,6 +45,8 @@
 		26C7C3871AFA9AB000D99828 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C7C3861AFA9AB000D99828 /* CoreLocation.framework */; };
 		26C80BBA1AFE82EF003137F6 /* RMTruckDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C80BB91AFE82EF003137F6 /* RMTruckDetailView.m */; };
 		26C80BBC1AFE831F003137F6 /* RMTruckDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C80BBB1AFE831F003137F6 /* RMTruckDetailView.xib */; };
+		26EB15141B1E3854006F04EF /* RMMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EB15121B1E3854006F04EF /* RMMenuCell.m */; };
+		26EB15151B1E3854006F04EF /* RMMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26EB15131B1E3854006F04EF /* RMMenuCell.xib */; };
 		26FD72751B1656A400583D7B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 26FD72741B1656A400583D7B /* Podfile */; };
 		B327FFB59F996D12910EA7B5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7899684A590F0190E443FDBB /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -114,6 +116,9 @@
 		26C80BB81AFE82EF003137F6 /* RMTruckDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTruckDetailView.h; sourceTree = "<group>"; };
 		26C80BB91AFE82EF003137F6 /* RMTruckDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTruckDetailView.m; sourceTree = "<group>"; };
 		26C80BBB1AFE831F003137F6 /* RMTruckDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTruckDetailView.xib; sourceTree = "<group>"; };
+		26EB15111B1E3854006F04EF /* RMMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMenuCell.h; sourceTree = "<group>"; };
+		26EB15121B1E3854006F04EF /* RMMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMenuCell.m; sourceTree = "<group>"; };
+		26EB15131B1E3854006F04EF /* RMMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMMenuCell.xib; sourceTree = "<group>"; };
 		26FD72741B1656A400583D7B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		472797B9762AA00ED528544B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7899684A590F0190E443FDBB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +299,9 @@
 				26916F201B0246A000091113 /* RMTruckEditView.xib */,
 				260F6BE51B10C84E00ED37FB /* RMViewAnimator.h */,
 				260F6BE61B10C84E00ED37FB /* RMViewAnimator.m */,
+				26EB15111B1E3854006F04EF /* RMMenuCell.h */,
+				26EB15121B1E3854006F04EF /* RMMenuCell.m */,
+				26EB15131B1E3854006F04EF /* RMMenuCell.xib */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -396,6 +404,7 @@
 				26C7C3581AF95F4D00D99828 /* Images.xcassets in Resources */,
 				26916F211B0246A000091113 /* RMTruckEditView.xib in Resources */,
 				26FD72751B1656A400583D7B /* Podfile in Resources */,
+				26EB15151B1E3854006F04EF /* RMMenuCell.xib in Resources */,
 				26C7C3811AF961DB00D99828 /* Quicksand-Bold.ttf in Resources */,
 				26C7C3821AF961DB00D99828 /* Quicksand-Light.ttf in Resources */,
 			);
@@ -451,6 +460,7 @@
 				26C7C3751AF9609F00D99828 /* RMTruckEditVC.m in Sources */,
 				26916F1F1B02468900091113 /* RMTruckEditView.m in Sources */,
 				2610FFD01B02965E00437076 /* RMTruckSignUpVC.m in Sources */,
+				26EB15141B1E3854006F04EF /* RMMenuCell.m in Sources */,
 				260F6BE71B10C84E00ED37FB /* RMViewAnimator.m in Sources */,
 				26C7C3531AF95F4D00D99828 /* RMLoginVC.m in Sources */,
 				26C7C3721AF9607F00D99828 /* RMCheckInVC.m in Sources */,

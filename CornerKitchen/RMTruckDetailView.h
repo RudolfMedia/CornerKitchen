@@ -19,5 +19,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *truckImage;
 @property (weak, nonatomic) IBOutlet UILabel *truckName;
 @property (weak, nonatomic) IBOutlet UILabel *foodType;
+@property (weak, nonatomic) IBOutlet UIButton *truckDetailViewLogout;
+@property (weak, nonatomic) IBOutlet UIView *locationContainer;
+@property (weak, nonatomic) IBOutlet UIView *locationView;
+@property (weak, nonatomic) IBOutlet UIButton *checkoutButton;
+@property (weak, nonatomic) IBOutlet UIButton *editMenuButton;
 
 @end
