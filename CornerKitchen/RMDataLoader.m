@@ -183,6 +183,7 @@
 
     PFQuery *menuQuery = [PFQuery queryWithClassName:@"MenuItem"];
     [menuQuery whereKey:@"truck" equalTo:truck];
+    [menuQuery orderByAscending:@"name"];
     [menuQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 
         if (!error) {
@@ -201,6 +202,29 @@
 }
 
 
+-(void)addNewMenuItemToCurrentTruck:(PFObject *)truck
+                               name:(NSString *)name
+                        description:(NSString *)description
+                              price:(NSString *)price
+                         onComplete:(void (^)(BOOL succeeded, NSError *error))onComplete{
+
+    PFObject *menuItem = [PFObject objectWithClassName:@"MenuItem"];
+    menuItem[@"name"] = name;
+    menuItem[@"description"] = description;
+    menuItem[@"price"] = price;
+    menuItem[@"truck"] = truck;
+
+    [menuItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+
+        if (succeeded) {
+            onComplete(succeeded, nil);
+        }
+        else{
+            onComplete(nil, error);
+        }
+
+    }];
+}
 
 
 

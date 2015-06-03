@@ -24,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIView *locationView;
 @property (weak, nonatomic) IBOutlet UIButton *checkoutButton;
 @property (weak, nonatomic) IBOutlet UIButton *editMenuButton;
+@property (weak, nonatomic) IBOutlet UIButton *addMenuItemButton;
 
 @end

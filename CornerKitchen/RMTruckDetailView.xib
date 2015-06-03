@@ -16,6 +16,7 @@
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
+            <string>Quicksand-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -62,12 +63,20 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHC-4G-2I6">
-                                    <rect key="frame" x="8" y="408" width="272" height="50"/>
+                                    <rect key="frame" x="8" y="408" width="130" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="rlM-do-XRt"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
-                                    <state key="normal" title="Edit Menu">
+                                    <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="65"/>
+                                    <state key="normal" title="-">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZK-WH-q8z">
+                                    <rect key="frame" x="150" y="408" width="130" height="50"/>
+                                    <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="37"/>
+                                    <state key="normal" title="+">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
@@ -77,12 +86,15 @@
                             <constraints>
                                 <constraint firstItem="5sV-CA-xBf" firstAttribute="leading" secondItem="nsJ-CJ-VvL" secondAttribute="leading" constant="8" id="3Md-tx-FI8"/>
                                 <constraint firstItem="WHC-4G-2I6" firstAttribute="top" secondItem="5sV-CA-xBf" secondAttribute="bottom" constant="8" id="3uu-qE-fmx"/>
+                                <constraint firstAttribute="bottom" secondItem="pZK-WH-q8z" secondAttribute="bottom" constant="8" id="3vS-Mp-O4H"/>
                                 <constraint firstItem="OV1-IU-Efw" firstAttribute="top" secondItem="nsJ-CJ-VvL" secondAttribute="top" constant="8" id="4zg-It-8Ii"/>
+                                <constraint firstItem="WHC-4G-2I6" firstAttribute="width" secondItem="pZK-WH-q8z" secondAttribute="width" id="64e-SC-SG4"/>
                                 <constraint firstItem="WHC-4G-2I6" firstAttribute="leading" secondItem="nsJ-CJ-VvL" secondAttribute="leading" constant="8" id="8Nu-LN-bAx"/>
+                                <constraint firstItem="pZK-WH-q8z" firstAttribute="top" secondItem="5sV-CA-xBf" secondAttribute="bottom" constant="8" id="8qi-0k-P4f"/>
                                 <constraint firstAttribute="centerX" secondItem="OV1-IU-Efw" secondAttribute="centerX" id="MJT-KZ-QT2"/>
-                                <constraint firstAttribute="trailing" secondItem="WHC-4G-2I6" secondAttribute="trailing" constant="8" id="OcN-rm-zdx"/>
                                 <constraint firstAttribute="bottom" secondItem="WHC-4G-2I6" secondAttribute="bottom" constant="8" id="hZg-r9-uq4"/>
                                 <constraint firstAttribute="trailing" secondItem="5sV-CA-xBf" secondAttribute="trailing" constant="8" id="qpn-Vl-IRL"/>
+                                <constraint firstAttribute="trailing" secondItem="pZK-WH-q8z" secondAttribute="trailing" constant="8" id="uU5-gc-fbR"/>
                             </constraints>
                         </view>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DmZ-gs-Jcg">
@@ -182,6 +194,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="activityIndicator" destination="DmZ-gs-Jcg" id="jy3-rk-4oa"/>
+                <outlet property="addMenuItemButton" destination="pZK-WH-q8z" id="QZG-Kz-3SE"/>
                 <outlet property="checkoutButton" destination="2uU-1S-ipp" id="dYr-mK-eRb"/>
                 <outlet property="editMenuButton" destination="WHC-4G-2I6" id="ZlC-th-0qh"/>
                 <outlet property="editProfileButton" destination="cpc-tC-TKc" id="HhP-qf-zl6"/>

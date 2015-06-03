@@ -21,14 +21,14 @@
                 typeOfFood:(NSString *)typeOfFood
                  ownerName:(NSString *)ownerName
                      image:(UIImage *)imageFile
-                completion:(void (^)(NSError *error))onComplete;
+                completion:(void (^) (NSError *error))onComplete;
 
 - (void)createNewRegularUser:(NSString *)username
                     password:(NSString *)password
                   onComplete:(void (^) (NSError *))callback;
 
 - (void)retreiveCurrentTruckForUser:(PFUser *)currentUser
-                         onComplete:(void (^)(NSError *error, PFObject *truck))callback;
+                         onComplete:(void (^) (NSError *error, PFObject *truck))callback;
 
 - (void)updateCurrentTruckProfile:(PFObject *)truck truckName:(NSString *)truckname
                        typeOfFood:(NSString *)typeOfFood
@@ -38,5 +38,11 @@
 
 - (void)getMenuItemsForCurrentTruck:(PFObject *)truck
                          onComplete:(void (^) (NSError *error, NSArray *items))callback;
+
+- (void)addNewMenuItemToCurrentTruck:(PFObject *)truck
+                                name:(NSString *)name
+                         description:(NSString *)description
+                               price:(NSString *)price
+                          onComplete:(void (^) (BOOL succeeded, NSError *error))onComplete;
 
 @end
